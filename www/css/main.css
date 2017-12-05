@@ -14,17 +14,13 @@ footer, .text-jumbo{
 strong{
 	font-weight: bold;
 }
-#connect4-board{
-	margin: 100px 0 100px 0;
-}
+
 
 
 
 // spela.html brädan
 #connect4-board{
 	max-width: 100%;
-	margin: 0 auto;
-	/*transform:scale(0.3);*/
 }
 
 .board-column{
