@@ -4,6 +4,16 @@ footer, .bg-jumbotron{
 footer, .text-jumbo{
 	color: #FF0000;
 }
+.background-red{
+	color: white;
+	background-color: #FF0000;
+}
+.no-border{
+	border: none;
+}
+strong{
+	font-weight: bold;
+}
 #connect4-board{
 	margin: 100px 0 100px 0;
 }
