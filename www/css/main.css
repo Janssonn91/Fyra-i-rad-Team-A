@@ -1,4 +1,9 @@
-
+.bg-jumbotron{
+	background-color: #0000FF;
+}
+.text-jumbo{
+	color: #FF0000;
+}
 #connect4-board{
 	margin: 100px 0 100px 0;
 }

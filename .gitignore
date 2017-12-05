@@ -1,3 +1,8 @@
+# Project dependenies
 node_modules
+
+# OSX folder attributes
 .DS_store
+
+# Other untracked files
 Gruppinfo
