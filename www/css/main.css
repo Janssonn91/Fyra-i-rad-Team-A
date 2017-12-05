@@ -2,12 +2,23 @@ header{
 	overflow-x: hidden;
 }
 
-footer, .bg-jumbotron{
-	background-color: #0000FF;
+nav {
+	background-color: #2f77ed;
 }
-footer, .text-jumbo{
-	color: #FF0000;
+
+body {
+	background-color: #a1c4fc;
 }
+
+.card {
+	background-color: #a1c4fc;
+}
+
+footer {
+	background-color: #2f77ed;
+	color: #fff;
+}
+
 .background-red{
 	color: white;
 	background-color: #FF0000;
@@ -15,9 +26,7 @@ footer, .text-jumbo{
 .no-border{
 	border: none;
 }
-strong{
-	font-weight: bold;
-}
+
 // spela.html brädan
 .jumbotron{
 	padding: 4rem 1rem;
