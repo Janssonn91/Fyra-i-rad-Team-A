@@ -1,7 +1,7 @@
-.bg-jumbotron{
+footer, .bg-jumbotron{
 	background-color: #0000FF;
 }
-.text-jumbo{
+footer, .text-jumbo{
 	color: #FF0000;
 }
 #connect4-board{
