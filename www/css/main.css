@@ -14,11 +14,24 @@ footer, .text-jumbo{
 strong{
 	font-weight: bold;
 }
-
-
-
-
 // spela.html brädan
+.jumbotron{
+	padding: 4rem 1rem;
+}
+h1{
+	font-size: 4.3vw;
+}
+@media screen and (max-width: 767.5px){
+  h1{
+  	font-size: 3.3vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.5px){
+  h1{
+  	font-size: 3.5vw;
+  }
+}
+
 #connect4-board{
 	max-width: 100%;
 }
