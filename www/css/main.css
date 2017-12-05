@@ -18,7 +18,10 @@ strong{
 	margin: 100px 0 100px 0;
 }
 
-
+/* regler.html */
+.youtubes{
+	list-style-type: none;
+}
 
 // spela.html brädan
 #connect4-board{
