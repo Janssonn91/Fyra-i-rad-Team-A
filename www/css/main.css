@@ -1,0 +1,37 @@
+
+#connect4-board{
+	margin: 100px 0 100px 0;
+}
+
+.col{
+	background-color: blue;
+	padding: 7px;
+}
+
+.col[data-colnr="0"]{
+	padding-left: 25px;
+}
+
+.col[data-colnr="6"]{
+	padding-right: 25px;
+}
+
+#connect4-board .row:first-child > *{
+	padding-top: 25px;
+} 
+
+#connect4-board .row:last-child > *{
+	padding-bottom: 25px;
+} 
+
+
+.circle{
+	background-color: white;
+	height: 100px;
+	border-radius: 100%;
+	border: 3px solid #0000aa;
+}
+
+.red{
+	background-color: red;
+}
