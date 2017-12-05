@@ -1,3 +1,7 @@
+header{
+	overflow-x: hidden;
+}
+
 footer, .bg-jumbotron{
 	background-color: #0000FF;
 }
@@ -14,8 +18,22 @@ footer, .text-jumbo{
 strong{
 	font-weight: bold;
 }
-#connect4-board{
-	margin: 100px 0 100px 0;
+// spela.html brädan
+.jumbotron{
+	padding: 4rem 1rem;
+}
+h1{
+	font-size: 4.3vw;
+}
+@media screen and (max-width: 767.5px){
+  h1{
+  	font-size: 3.3vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.5px){
+  h1{
+  	font-size: 3.5vw;
+  }
 }
 
 /* regler.html */
@@ -26,8 +44,6 @@ strong{
 // spela.html brädan
 #connect4-board{
 	max-width: 100%;
-	margin: 0 auto;
-	/*transform:scale(0.3);*/
 }
 
 .board-column{
