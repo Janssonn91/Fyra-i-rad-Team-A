@@ -24,14 +24,14 @@ footer {
   Other footer height for Boostrap xs, sm
   (for breakpoint see: https://getbootstrap.com/css/)
 */
-@media screen and (max-width: 969px) {
+@media screen and (max-width: 768px) {
 
     body {
       margin-bottom:300px;
     }
 
     footer {
-      height: 280px;
+      height: 180px;
     }
 
 }
