@@ -12,9 +12,9 @@ class Board{
 	}
 	createBoard(){
 		for(let i = 0; i < 6; i++){
-			let row = $('<div>').addClass('row');
+			let row = $('<div>').addClass('board-row');
 			for(let j = 0; j < 7; j++){
-				let col = $('<div>').addClass('col').addClass('noBrick');
+				let col = $('<div>').addClass('board-column').addClass('noBrick');
 				col.attr('data-colNr',j).attr('data-rowNr', i);
 				let circles = $('<div>').addClass('circle');
 				col.append(circles);
@@ -26,7 +26,7 @@ class Board{
 
 	dropBrick(){
 		const that = this;
-		$(this.board).on('click', '.col', function(){
+		$(this.board).on('click', '.board-column', function(){
 			let colNumber = $(this).data('colnr');
 			let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
 			for(let i = emptyCols.length - 1; i>= 0; i--){
