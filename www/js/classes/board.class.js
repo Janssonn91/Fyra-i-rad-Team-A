@@ -12,9 +12,9 @@ class Board{
 	}
 	createBoard(){
 		for(let i = 0; i < 6; i++){
-			let row = $('<div>').addClass('board-row');
+			let row = $('<div>').addClass('row board-row');
 			for(let j = 0; j < 7; j++){
-				let col = $('<div>').addClass('board-column').addClass('noBrick');
+				let col = $('<div>').addClass('col board-column noBrick');
 				col.attr('data-colNr',j).attr('data-rowNr', i);
 				let circles = $('<div>').addClass('circle');
 				col.append(circles);

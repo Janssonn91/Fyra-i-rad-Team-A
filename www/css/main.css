@@ -42,35 +42,45 @@ h1{
 	list-style-type: none;
 }
 
-// spela.html brädan
+// spela.html 
 #connect4-board{
 	max-width: 100%;
 }
 
 .board-column{
-	width: 100px;
-	height: 100px;
 	background-color: blue;
-	padding: 7px;
-	float: left;
+	padding: 5px;
+}
+
+.board-column[data-colnr="0"]{
+	padding-left: 20px;
+}
+
+.board-column[data-colnr="6"]{
+	padding-right: 20px;
+}
+
+#connect4-board .board-row:first-child > *{
+	padding-top: 20px;
+}
+
+#connect4-board .board-row:last-child > *{
+	padding-bottom: 20px;
 }
 
 .circle{
 	background-color: white;
-	height: 90px;
-	width: 90px;
-	border-radius: 50%;
-	border: 3px solid #0000aa;
+	border-radius: 100%;
+	padding-top: 100%;
 }
 
 .red{
 	background-color: red;
 }
 
-h2 {
+///
 
+h2 {
 	margin-left: 40px;
 	margin-bottom: 30px;
 }
-///
-
