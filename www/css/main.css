@@ -12,6 +12,9 @@
 	width: 80px;
 }
 /*	Blandat		*/
+.border-radius{
+	border-radius: 15px;
+}
 body {
 	background-color: #a1c4fc;
 	font-family: 'Gloria Hallelujah', cursive;
@@ -71,6 +74,9 @@ h1{
 h2 {
 	margin-left: 40px;
 	margin-bottom: 30px;
+}
+.andra-spel{
+	max-height: 180px;
 }
 /* Spelregler */
 .youtubes{
