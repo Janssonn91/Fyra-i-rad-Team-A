@@ -36,7 +36,6 @@ class Board{
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
 					that.arrBoard[rowNumber][colNumber] = 1;
-					console.log(that.arrBoard);
 					return;
 				}
 				else {return null;}
