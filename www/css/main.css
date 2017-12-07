@@ -1,19 +1,23 @@
 /*	Header  */
 .fa-trophy {
 	color: gold;
-	margin-left: 8px;
 }
 .fa-gamepad {
-	color: black;
-	margin-left: 8px;
+	color: white;
+}
+.fa-book{
+	color: brown;
 }
 /*	Blandat		*/
-nav, .bg-jumbotron {
-	background-color: #2f77ed;
-}
 body {
 	background-color: #a1c4fc;
 	font-family: 'Gloria Hallelujah', cursive;
+}
+nav, .bg-jumbotron {
+	background-color: #2f77ed;
+}
+.nav-link{
+	font-size: 1.3rem;
 }
 .card {
 	background-color: #a1c4fc;
