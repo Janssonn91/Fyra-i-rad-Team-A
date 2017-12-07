@@ -105,6 +105,17 @@ h2 {
 	border: 2px solid #0000aa;
 }
 
+
+.col-hover-brick{
+	background-color: #a1c4fc;
+	height: 100px;
+	border-radius: 100%;
+}
+
+.row-hover-brick{
+	height: 100px;
+}
+
 .red{
 	background-color: red;
 }
