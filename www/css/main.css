@@ -37,6 +37,12 @@ footer {
 h1{
 	font-size: 4.3vw;
 }
+
+h2 {
+	margin-left: 40px;
+	margin-bottom: 30px;
+}
+
 @media screen and (max-width: 767.5px){
   h1{
   	font-size: 3.3vw;
@@ -60,12 +66,18 @@ h1{
 
 .board-column{
 	background-color: blue;
-	padding: 5px;
+	padding: 5px 10px;
+}
+
+@media only screen and (max-width: 992px){
+	.board-column{
+		padding: 3px 7px;
+	}
 }
 
 @media only screen and (max-width: 350px){
 	.board-column{
-		padding: 3px;
+		padding: 3px 5px;
 	}
 }
 
@@ -89,7 +101,8 @@ h1{
 	background-color: white;
 	border-radius: 100%;
 	padding-top: 100%;
-	/*border: 2px solid #0000aa;*/
+	margin:0 -3px;
+	border: 2px solid #0000aa;
 }
 
 .red{
