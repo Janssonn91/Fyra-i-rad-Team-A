@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Sticky footer -->
     <link rel="stylesheet" href="/css/stickyfooter.css">
+    <!-- Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-
   </head>
   <body>
     <header class="container-fluid mb-5">
@@ -23,7 +23,6 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
@@ -42,61 +41,64 @@
         </nav>
       </div>
     </header>
-    <main class="container testconnect">
+    <main class="container">
       <div class="row">
-        <div class="col-7 mt-5">
+        <!--    Start på Jumbotron (till vänster)   -->
+        <div class="col-7 mt-3">
           <div class="jumbotron bg-jumbotron mt-0 py-4 mr-3 text-jumbo">
             <h1 class="mb-4 font-weight-bold">Välkomna!</h1>
             <h2 class="lead ml-2 ml-lg-3 font-weight-bold">Spela det klassiska spelet 4-i-rad online.</h2>
             <div class="row">
-              <div class="col-2 col-sm-6 col-md-6 col-lg-8">
+              <div class="col-0 col-sm-7 col-md-6 col-lg-8">
               
               </div>
-              <div class="col-8 col-sm-6 col-md-6 col-lg-3 ml-0 pl-0 ml-sm-5 pl-sm-4 pl-md-0 ml-md-0 float-right">
-                <a class="btn btn-success py-2 px-2 ml-3 font-weight-bold" href="/spela.html" role="button">Starta spelet!</a>
+              <div class="col-4 col-sm-5 col-md-6 col-lg-3 ml-0 pl-0 ml-sm-5 pl-sm-4 pl-md-0 ml-md-0">
+                <a class="btn btn-success py-2 px-2 mx-1 font-weight-bold" href="/spela.html" role="button">Starta spelet!</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-4 mt-5 ml-5">
-          <div class="no-border card h-50 w-50 float-right">
-            <h4 class="card-title text-center">4 i rad</h4>
-            <img class="card-img-top w-100" src="/imgs/4-i-rad.png" alt="4 i rad spelbräda">
+        <!--  Bild till höger  -->
+        <div class="col-4 mt-2">
+          <div class="no-border card float-right">
+            <h3 class="card-title text-center text-jumbo">4 i rad</h3>
+            <img class="card-img-top mx-auto start-bild" src="/imgs/4-i-rad.png" alt="4 i rad spelbräda">
           </div>
         </div>
       </div>
-
-
-      <h2>Andra spel online</h2>
-       <div class="col-12">
-
-      <div class="row justify-content-around">
-          <div class="card border-0" style="width: 15rem;">
-        <a href="http://spele.nl/behendigheid-spelletjes/"><img class="card-img-top" src="/imgs/brown.jpg" alt="Card image cap"></a>
-        <div class="card-body">
-        <h4 class="card-title">Double doug</h4>
-  </div>
-</div>
-
-          <div class="card border-0" style="width: 15rem;">
-        <a href="http://spele.nl/actie-spelletjes/"><img class="card-img-top" src="/imgs/ladda.jpg" alt="Card image cap"></a>
-        <div class="card-body">
-        <h4 class="card-title">Fight club</h4>
-  </div>
-</div>
-
-
-    <div class="card border-0" style="width: 15rem;">
-      <a href="http://spele.nl/race-spelletjes/"><img class="card-img-top" src="/imgs/racers2.jpg" alt="Card image cap"></a>
-      <div class="card-body">
-        <h4 class="card-title">Racing</h4>
       </div>
-    </div>
-
-    </div>
-
-
-      </div><!--end of row-->
+      <div class="row mt-4">
+        <h2 class="ml-5 text-jumbo">Andra spel online</h2>
+        <div class="col-12">
+          <div class="row justify-content-around">
+          
+            <!--    Spelbild 1    -->
+            <div class="card border-0" style="width: 15rem;">
+              <a href="http://spele.nl/behendigheid-spelletjes/"><img class="card-img-top" src="/imgs/brown.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <h5 class="card-title text-jumbo">Double doug</h5>
+                </div>
+            </div>
+ 
+            <!--    Spelbild 2    -->
+            <div class="card border-0" style="width: 15rem;">
+              <a href="http://spele.nl/actie-spelletjes/"><img class="card-img-top" src="/imgs/ladda.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <h5 class="card-title text-jumbo">Fight club</h5>
+                </div>
+            </div>
+ 
+            <!--    Spelbild 3    -->
+            <div class="card border-0" style="width: 15rem;">
+              <a href="http://spele.nl/race-spelletjes/"><img class="card-img-top" src="/imgs/racers2.jpg" alt="Card image cap"></a>
+                <div class="card-body">
+                  <h5 class="card-title text-jumbo">Racing</h5>
+                </div>
+            </div>
+ 
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="container-fluid">
       <div class="row mt-4">
@@ -110,16 +112,16 @@
           <p><i class="fa fa-phone" aria-hidden="true"></i> Telefon: 044-444 444</p>
         </div>
       </div>
-    </footer>
-
-    <!-- JavaScript libraries -->
-    <script src="/jsonflex.js"></script>
-    <script src="/js/libs/jquery-3.2.1.js"></script>
-    <script src="/js/libs/popper-1.11.0.js"></script>
-    <script src="/js/libs/bootstrap-4-beta.js"></script>
-    <!-- Application specific JavaScript -->
-    <script src="/js/spelregler.js"></script>
-    <script src="/js/classes/board.class.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
-</html>
+        </footer>
+     
+        <!-- JavaScript libraries -->
+        <script src="/jsonflex.js"></script>
+        <script src="/js/libs/jquery-3.2.1.js"></script>
+        <script src="/js/libs/popper-1.11.0.js"></script>
+        <script src="/js/libs/bootstrap-4-beta.js"></script>
+        <!-- Application specific JavaScript -->
+        <script src="/js/spelregler.js"></script>
+        <script src="/js/classes/board.class.js"></script>
+        <script src="/js/main.js"></script>
+      </body>
+    </html>
