@@ -118,6 +118,10 @@ h2 {
 	background-color: red;
 }
 
+.yellow{
+	background-color: yellow;
+}
+
 .player-brick{
 	background-color: red;
   height: 45px;

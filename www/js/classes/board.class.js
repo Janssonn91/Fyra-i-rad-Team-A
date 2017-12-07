@@ -52,7 +52,7 @@ class Board{
 		}
 	}
 
-	hoverBrick(){
+	hoverBrick(){	
 		$(this.board).on('mouseover', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass('red');
@@ -64,17 +64,24 @@ class Board{
 	}
 
 	dropBrick(){
+		let currentPlayer = 'red';
 		const that = this;
 		$(this.board).on('click', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
 			for(let i = emptyCols.length - 1; i>= 0; i--){
 				if (emptyCols.hasClass('noBrick')) {
-					$(emptyCols[i]).children().addClass('red');
+					$(emptyCols[i]).children().addClass(currentPlayer);
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
 					that.arrBoard[rowNumber][colNumber] = 1;
+					if(currentPlayer == 'red'){
+						currentPlayer = 'yellow';
+					}
+					else{
+						currentPlayer = 'red';
+					}
 					return;
 				}
 				else {return null;}
