@@ -4,6 +4,7 @@ nav {
 
 body {
 	background-color: #a1c4fc;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 .card {
@@ -17,6 +18,15 @@ footer {
 
 .no-border{
 	border: none;
+}
+
+.fa-trophy {
+	color: gold;
+}
+
+.fa-gamepad {
+	color: black;
+	margin-left: 3px;	
 }
 
 // spela.html brädan
@@ -42,7 +52,7 @@ h1{
 	list-style-type: none;
 }
 
-// spela.html 
+// spela.html
 #connect4-board{
 	max-width: 100%;
 }
