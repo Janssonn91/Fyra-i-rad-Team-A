@@ -52,6 +52,12 @@ h1{
 	padding: 5px;
 }
 
+@media only screen and (max-width: 350px){
+	.board-column{
+		padding: 3px;
+	}
+}
+
 .board-column[data-colnr="0"]{
 	padding-left: 20px;
 }
@@ -72,6 +78,7 @@ h1{
 	background-color: white;
 	border-radius: 100%;
 	padding-top: 100%;
+	/*border: 2px solid #0000aa;*/
 }
 
 .red{
