@@ -37,15 +37,13 @@ footer {
 h1{
 	font-size: 4.3vw;
 }
-@media screen and (min-width: 300px) and (max-width: 599px){
-  h1{
-  	font-size: 6vw;
-  }
-  .lead{
-  	font-size: 4.5vw;
-  }
+
+h2 {
+	margin-left: 40px;
+	margin-bottom: 30px;
 }
-@media screen and (min-width: 600px) and (max-width: 767.5px){
+
+@media screen and (max-width: 767.5px){
   h1{
   	font-size: 3.3vw;
   }
