@@ -21,7 +21,7 @@ footer {
   Other footer height for Boostrap xs, sm
   (for breakpoint see: https://getbootstrap.com/css/)
 */
-@media screen and (min-width: 769px) and (max-width: 919px) {
+@media screen and (min-width: 769px) and (max-width: 937px) {
   footer {
     height: 90px;
   }
