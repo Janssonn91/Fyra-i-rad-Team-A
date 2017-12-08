@@ -1,4 +1,4 @@
-let game = new Board('#connect4-board');
+let game = new Board('#board');
 
-
+$(window).resize(game.scale);
 

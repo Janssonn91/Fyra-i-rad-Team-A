@@ -16,10 +16,10 @@
 
   </head>
   <body>
-    <header class="container-fluid mb-2 mb-md-5">
+    <header class="container-fluid mb-4">
       <div class="row">
         <nav class="navbar navbar-expand-xl navbar-dark col-12">
-          <a class="navbar-brand" href="#">Fyra-i-rad</a>
+          <a href="/"><img class="logo mr-4 mb-3 mb-md-0" src="/imgs/4-i-rad-logo.png"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,13 +27,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="btn btn-danger" href="/">Avbryt spelet</a>
+                <a class="btn btn-danger mt-1" href="/">Avbryt spelet</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link nav-modal" data-toggle="modal" data-target="#exampleModal">Spelregler</a>
+                <a href="#" class="nav-link nav-modal" data-toggle="modal" data-target="#exampleModal">Spelregler<i class="pl-2 fa fa-lg fa-book" aria-hidden="true"></i></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Hi-score<i class="fa fa-lg fa-trophy" aria-hidden="true"></i></a>
+                <a class="nav-link" href="#">Hi-Score<i class="pl-2 fa fa-lg fa-trophy" aria-hidden="true"></i></a>
               </li>
             </ul>
           </div>
@@ -41,18 +41,15 @@
       </div>
     </header>
     <main class="container">
-      <div class="row">
-          <div class="col-md-6 ml-3 mr-3 mr-md-0 ml-md-0 mb-2 order-2 order-md-1" id="connect4-board">
-            <!--render from Javascript-->
-          </div>
-          <div class="col-md-6 order-1 order-md-2 mb-2 mb-md-0">
-          <div class="card display-player">
-            <div class="card-body p-2 ">
-              <h4 class="card-title">Spelare: Anna</h4>
+      <div class="board-holder">
+        <div id="board">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="display-4 d-inline mr-3">Spelare: Anna</h4>
+              <div class="player-brick d-inline-block"></div>
             </div>
           </div>
         </div>
-
       </div>
     </main>
     <footer class="container-fluid">
@@ -65,6 +62,11 @@
         </div>
         <div class="col-md-4 text-center">
           <p><i class="fa fa-phone" aria-hidden="true"></i> Telefon: 044-444 444</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p><i class="fa fa-copyright" aria-hidden="true"></i> A-TEAM</p>
         </div>
       </div>
     </footer>

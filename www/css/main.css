@@ -17,7 +17,6 @@
 }
 body {
 	background-color: #a1c4fc;
-	font-family: 'Gloria Hallelujah', cursive;
 }
 nav, .bg-jumbotron {
 	background-color: #2f77ed;
@@ -41,6 +40,7 @@ footer {
 .no-border{
 	border: none;
 }
+
 .jumbotron{
 	padding: 4rem 1rem;
 }
@@ -82,37 +82,57 @@ h2 {
 .youtubes{
 	list-style-type: none;
 }
-/* Spelboard */
-#connect4-board{
-	max-width: 100%;
+
+/* spela */
+.board-holder{
+	overflow: hidden;
+	margin: 0 auto;
+} 
+
+#board{
+	width: 798px;
+	height: 798px;
+	transform-origin: 0 0;
+  display: none;
 }
-.board-column{
+
+.board-col , .hover-brick-col{
 	background-color: blue;
-	padding: 5px;
+	padding: 7px;
+  float: left;
+
 }
-@media only screen and (max-width: 350px){
-	.board-column{
-		padding: 3px;
-	}
+
+.hover-brick-col{
+	background-color: transparent;
 }
-.board-column[data-colnr="0"]{
-	padding-left: 20px;
-}
-.board-column[data-colnr="6"]{
-	padding-right: 20px;
-}
-#connect4-board .board-row:first-child > *{
-	padding-top: 20px;
-}
-#connect4-board .board-row:last-child > *{
-	padding-bottom: 20px;
-}
+
 .circle{
 	background-color: white;
-	border-radius: 100%;
-	padding-top: 100%;
-	/*border: 2px solid #0000aa;*/
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #0000aa;
 }
+
+.hover-brick-col > *{
+	background-color: transparent;
+	border:none;
+}
+
 .red{
 	background-color: red;
 }
+
+.yellow{
+	background-color: yellow;
+}
+
+.player-brick{
+	background-color: red;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+
