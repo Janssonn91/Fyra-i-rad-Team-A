@@ -18,6 +18,9 @@
 .border-radius{
 	border-radius: 15px;
 }
+.border-radius2{
+	border-radius: 23px;
+}
 body {
 	background-color: #a1c4fc;
 	font-family: 'Gloria Hallelujah', cursive;
