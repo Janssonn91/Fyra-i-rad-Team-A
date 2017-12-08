@@ -15,11 +15,15 @@ class Board{
 
 	scale(){
 		let boardW = 798;
-		let boardH = 909;
+		let boardH = 901;
 		let w = $(window).width();
 		let h = $(window).height(); 
-		h -= $('header').outerHeight() + $('footer').outerHeight();
-		w -= + 20 * 2; 
+		if($(window).width() > 1024){
+			h -= $('.board-holder').offset().top + 150;
+		}else{
+			h -= $('.board-holder').offset().top + 20;
+		}
+		w -= + 40 * 2; 
 		let wScale = w / boardW; 
 		let hScale = h / boardH;
 		let scaling = Math.min(wScale, hScale);
