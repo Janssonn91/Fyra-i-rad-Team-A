@@ -23,11 +23,6 @@ class Board{
 		}else{
 			h -= $('.board-holder').offset().top + 20;
 		}
-		// if($(window).width() > 1920){
-		// 	h -= $('.board-holder').offset().top + 70;
-		// }else{
-		// 	h -= $('.board-holder').offset().top + 20;
-		// }
 		w -= + 40 * 2; 
 		let wScale = w / boardW; 
 		let hScale = h / boardH;
