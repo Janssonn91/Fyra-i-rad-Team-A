@@ -84,9 +84,13 @@ class Board{
 					that.arrBoard[rowNumber][colNumber] = 1;
 					if(that.player1 == 'red'){
 						that.player1 = 'yellow';
+						$('.display-player h4').text('Spelare: Martin');
+						$('.player-brick').css("background-color", "yellow");
 					}
 					else{
 						that.player1 = 'red';
+						$('.display-player h4').text('Spelare: Anna');
+						$('.player-brick').css("background-color", "red");
 					}
 					$(`.hover-brick-col[data-colNr='${colNumber}']`)
 					  .children().removeClass('red yellow').addClass(that.player1);
