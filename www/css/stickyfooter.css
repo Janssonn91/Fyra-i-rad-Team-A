@@ -27,11 +27,11 @@ footer {
 @media screen and (max-width: 768px) {
 
     body {
-      margin-bottom:300px;
+      margin-bottom:200px;
     }
 
     footer {
-      height: 190px;
+      height: 180px;
     }
 
 }
