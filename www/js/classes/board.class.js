@@ -1,5 +1,5 @@
 class Board{
-	constructor(selector){
+	constructor(selector, player1 = 'red'){
 		this.board = selector;
 		this.arrBoard = [ [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0],
@@ -11,6 +11,7 @@ class Board{
 		this.hoverBrick();
 		this.scale();
 		this.dropBrick();
+		this.player1 = player1;
 	}
 
 	scale(){
@@ -57,35 +58,38 @@ class Board{
 	}
 
 	hoverBrick(){	
+		const that = this;
 		$(this.board).on('mouseover', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
-			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass('red');
+			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.player1);
 		});
 		$(this.board).on('mouseleave', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
-			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red');
+			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
 		});
 	}
 
 	dropBrick(){
-		let currentPlayer = 'red';
+		
 		const that = this;
 		$(this.board).on('click', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
 			for(let i = emptyCols.length - 1; i>= 0; i--){
 				if (emptyCols.hasClass('noBrick')) {
-					$(emptyCols[i]).children().addClass(currentPlayer);
+					$(emptyCols[i]).children().addClass(that.player1);
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
 					that.arrBoard[rowNumber][colNumber] = 1;
-					if(currentPlayer == 'red'){
-						currentPlayer = 'yellow';
+					if(that.player1 == 'red'){
+						that.player1 = 'yellow';
 					}
 					else{
-						currentPlayer = 'red';
+						that.player1 = 'red';
 					}
+					$(`.hover-brick-col[data-colNr='${colNumber}']`)
+					  .children().removeClass('red yellow').addClass(that.player1);
 					return;
 				}
 				else {return null;}
