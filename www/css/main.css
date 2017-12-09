@@ -6,7 +6,7 @@
 	color: white;
 }
 .fa-book{
-	color: brown;
+	color: #aa0a09;
 }
 .logo{
 	width: 80px;
@@ -39,7 +39,13 @@ footer {
 	color: #fff;
 }
 .text-jumbo{
-  color: #aa0a09;
+  color: gold;
+}
+.text-andra-spel {
+	color: #aa0a09;
+}
+.jumbotron a.btn {
+	background-color: #aa0a09;
 }
 .start-bild{
 	width: 85%;
