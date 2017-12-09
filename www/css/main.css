@@ -99,7 +99,9 @@ h2 {
 .youtubes{
 	list-style-type: none;
 }
-
+.modal button span {
+	font-size: 250%;
+}
 /* spela */
 .board-holder{
 	overflow: hidden;
