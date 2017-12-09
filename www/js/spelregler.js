@@ -13,10 +13,10 @@ let theRules = $(`
               <hr>
               <ul class="youtubes pl-0">
                 <h4 class="text-danger">Länkar till filmer</h4>
-                <li><a href="https://www.youtube.com/watch?v=H3FYRM9a0i4">Se hur man spelar</a></li>
-                <li><a href="https://www.youtube.com/watch?v=ONKFwqnusbI">Gör ditt eget bräde (svår)</a></li>
-                <li><a href="https://www.youtube.com/watch?v=yDWPi1pZ0Po">Mer statistik än du någonsin vill veta</a></li>
-                <li><a href="https://www.youtube.com/watch?v=rqkxmXBY7yQ">Om motståndaren är för svår, fuska</a></li>
+                <li><a href="https://www.youtube.com/watch?v=H3FYRM9a0i4" target="_blank">Se hur man spelar</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ONKFwqnusbI" target="_blank">Gör ditt eget bräde (svår)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=yDWPi1pZ0Po" target="_blank">Mer statistik än du någonsin vill veta</a></li>
+                <li><a href="https://www.youtube.com/watch?v=rqkxmXBY7yQ" target="_blank">Om motståndaren är för svår, fuska</a></li>
               </ul>
             </div>
             <div class="modal-footer">
