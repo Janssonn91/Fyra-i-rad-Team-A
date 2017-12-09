@@ -47,6 +47,10 @@ footer {
 .jumbotron a.btn {
 	background-color: #aa0a09;
 }
+.jumbotron a.btn:hover {
+	background-color: #E63236;
+	color: gold;
+}
 .start-bild{
 	width: 85%;
 }
