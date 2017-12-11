@@ -2,7 +2,16 @@
 8/12 Fredag 9-16 grupprum 4
 12/12 Tisdag 9-16 grupprum 4
 
+13/12 Onsdag 9-16 grupprum 4
+14/12 Torsdag 13-16 grupprum 6
+15/12 Fredag 12-16 grupprum 6
+
+19/12 Tisdag 12-16 grupprum 1
+20/12 Onsdag 10-15 grupprum 3
+22/12 Fredag 9-14 grupprum 3
+
 Burndown (34poäng totalt):
 Tisdag 5 dec, 3poäng gjorda (31 kvar)
 Onsdag 6 dec, 13,5 poäng gjorda (16,5 totalt, 17,5 kvar)
 Torsdag 7 dec, 17 poäng gjorda (33,5 totalt, 0,5 kvar)
+Fredag 8 dec, 0,5 poäng gjorda (34 totalt, helt klar)
