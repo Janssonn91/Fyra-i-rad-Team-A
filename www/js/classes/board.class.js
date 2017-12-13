@@ -70,7 +70,6 @@ class Board{
 	}
 
 	dropBrick(){
-		
 		const that = this;
 		$(this.board).on('click', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
@@ -78,6 +77,10 @@ class Board{
 			for(let i = emptyCols.length - 1; i>= 0; i--){
 				if (emptyCols.hasClass('noBrick')) {
 					$(emptyCols[i]).children().addClass(that.currentPlayer);
+
+					// testrad, lägger på önskad effekt på sista brickan
+					$(emptyCols[i]).children().addClass('green');
+					
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
@@ -85,7 +88,7 @@ class Board{
 					if(that.currentPlayer == 'red'){
 						that.currentPlayer = 'yellow';
 						$('.display-player h4').text('Spelare: Martin');
-						$('.player-brick').css("background-color", "yellow");
+						$('.player-brick').css("background-color", "yellow");						
 					}
 					else{
 						that.currentPlayer = 'red';

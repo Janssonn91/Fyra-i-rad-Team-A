@@ -161,8 +161,12 @@ h2 {
 	background-color: yellow;
 }
 
+.green{
+	background-color: green;
+}
+
 .player-brick{
-	background-color: red;
+  background-color: red;
   height: 45px;
   width: 45px;
   border-radius: 50%;
