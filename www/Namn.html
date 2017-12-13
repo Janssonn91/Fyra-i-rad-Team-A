@@ -52,27 +52,42 @@
               <form>
                 <div class="row">
                   <div class="col-lg-3">
-                    <input type="text" id="player1" class="form-control" placeholder="Namn">
+                    <input type="text" class="form-control" placeholder="Namn">
                   </div>
-                  <button type="submit" id="player1-btn" class="btn btn-primary mr-2">Välj spelartyp</button>
-                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                      <option selected value="1" id="player1opt1">Människa</option>
-                      <option value="2">Dator</option>
-                    </select>
+                  <button type="submit" class="btn btn-primary mr-2">Välj spelartyp</button>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                       Människa
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        Dator
+                      </label>
+                    </div>
                 </div>
               </form>
               <p class="mt-4">Ange spelare 2</p>
               <form>
                 <div class="row">
                   <div class="col-lg-3">
-                   <input type="text" id="player2" class="form-control" placeholder="Namn">
+                   <input type="text" class="form-control" placeholder="Namn">
                   </div>
-                  <button type="submit" id="player2-btn" class="btn btn-primary mr-2">Välj spelartyp</button>
-                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                    <option selected value="1">Människa</option>
-                    <option value="2">Dator</option>
-                  </select>
-                </div>
+                  <button type="submit" class="btn btn-primary mr-2">Välj spelartyp</button>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                      Människa
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                      Dator
+                    </label>
+                  </div>
               </form>
             </div>
         </div>
@@ -102,11 +117,7 @@
     <script src="/js/libs/bootstrap-4-beta.js"></script>
     <!-- Application specific JavaScript -->
     <script src="/js/spelregler.js"></script>
-    <script src="/js/classes/game.class.js"></script>
     <script src="/js/classes/board.class.js"></script>
-    <script src="/js/classes/player.class.js"></script>
-    <script src="/js/classes/human.class.js"></script>
-    <script src="/js/classes/computer.class.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>
