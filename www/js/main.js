@@ -1,9 +1,6 @@
+let game = new Game();
 
-
-//let game = new Board('#board');
-
-//$(window).resize(game.scale);
-
+$(window).resize(game.board.scale);
 
 
 $('#player1-btn').click(function(){
@@ -12,7 +9,7 @@ $('#player1-btn').click(function(){
   // om inget är ifyllt, return
   if(name === ''){
     return;
-  };
+  }
   // avläs värde i dropdown, måste sätta det på selectorn istället för bara ett värde, annars blir det alltid 1 här...
   let value = $('#player1opt1').val();
   let player1;
@@ -23,7 +20,7 @@ $('#player1-btn').click(function(){
   	player1 = new Computer('app', name, 'red');
   }
   alert(player1.name + value);
-})
+});
 
 
 $('#player2-btn').click(function(){
@@ -34,4 +31,4 @@ $('#player2-btn').click(function(){
     return;
   };
   let player2 = new Human('app', name2, 'yellow');
-})
+});

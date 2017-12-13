@@ -1,6 +1,7 @@
 class Board{
-	constructor(selector){
-		this.board = selector;
+	constructor(selector, game){
+		this.boardId = selector;
+		this.game = game;
 		this.arrBoard = [ [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0],
@@ -8,8 +9,8 @@ class Board{
 						  [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0] ];
 		this.createBoard();
-		this.hoverBrick();
 		this.scale();
+		this.hoverBrick();
 		this.dropBrick();
 		this.currentPlayer = 'red';
 	}
@@ -50,7 +51,7 @@ class Board{
 			hoverCol.append(circles);
 			$(hoverRow).append(hoverCol);
 		}
-		$(this.board).append(hoverRow);
+		$(this.boardId).append(hoverRow);
 		// visible row/col
 		for(let i = 0; i < 6; i++){
 			let row = $('<div>').addClass('board-row');
@@ -61,17 +62,17 @@ class Board{
 				col.append(circles);
 				$(row).append(col);
 			}
-			$(this.board).append(row);
+			$(this.boardId).append(row);
 		}
 	}
 
 	hoverBrick(){	
 		const that = this;
-		$(this.board).on('mouseover', '.board-col', function(){
+		$(this.boardId).on('mouseover', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer);
 		});
-		$(this.board).on('mouseleave', '.board-col', function(){
+		$(this.boardId).on('mouseleave', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			$(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
 		});
@@ -79,7 +80,7 @@ class Board{
 
 	dropBrick(){
 		const that = this;
-		$(this.board).on('click', '.board-col', function(){
+		$(this.boardId).on('click', '.board-col', function(){
 			let colNumber = $(this).data('colnr');
 			let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
 			for(let i = emptyCols.length - 1; i>= 0; i--){
