@@ -1,3 +1,4 @@
+let game = new Game();
 
 
 //let game = new Board('#board');
