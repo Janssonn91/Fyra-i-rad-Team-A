@@ -87,7 +87,11 @@ class Board{
 					$(emptyCols[i]).children().addClass(that.currentPlayer);
 
 					// testrad, lägger på önskad effekt på sista brickan
-					$(emptyCols[i]).children().addClass('green');
+					$(emptyCols[i]).children().addClass('blinking');
+					// timer räknar till 2sec och sedan tar bort classen blinking
+					setTimeout(function() {
+				       $(emptyCols[i]).children().removeClass('blinking');
+				   	}, 2000);
 					
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
