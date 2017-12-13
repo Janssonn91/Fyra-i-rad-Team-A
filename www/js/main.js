@@ -1,8 +1,8 @@
 
 
-//let game = new Board('#board');
+let game = new Board('#board');
 
-//$(window).resize(game.scale);
+$(window).resize(game.scale);
 
 
 
