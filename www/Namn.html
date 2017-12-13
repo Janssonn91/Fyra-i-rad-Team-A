@@ -52,9 +52,9 @@
               <form>
                 <div class="row">
                   <div class="col-lg-3">
-                    <input type="text" class="form-control" placeholder="Namn">
+                    <input type="text" id="player1" class="form-control" placeholder="Namn">
                   </div>
-                  <button type="submit" class="btn btn-primary mr-2">Confirm identity</button>
+                  <button type="submit" id="player1-btn" class="btn btn-primary mr-2">Confirm identity</button>
                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
                       <option selected>Choose...</option>
                       <option value="1">Människa</option>
@@ -104,7 +104,11 @@
     <script src="/js/libs/bootstrap-4-beta.js"></script>
     <!-- Application specific JavaScript -->
     <script src="/js/spelregler.js"></script>
+    <script src="/js/classes/game.class.js"></script>
     <script src="/js/classes/board.class.js"></script>
+    <script src="/js/classes/player.class.js"></script>
+    <script src="/js/classes/human.class.js"></script>
+    <script src="/js/classes/computer.class.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>
