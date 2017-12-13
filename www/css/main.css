@@ -165,9 +165,17 @@ h2 {
 	background-color: yellow;
 }
 
-.green{
-	background-color: green;
+.blinking{
+	animation: blink-animation 0.5s  infinite;
+  -webkit-animation: blink-animation 0.5s  infinite;
 }
+
+@-webkit-keyframes blink-animation {
+  to {
+    background-color: white;
+  }
+}
+
 
 .display-players{
 	width: 350px;
