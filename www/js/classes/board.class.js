@@ -15,16 +15,24 @@ class Board{
 	}
 
 	scale(){
-		let boardW = 798;
-		let boardH = 901;
+		let boardW;
+		let boardH;
+		if($(window).width() <= 768){
+			boardW = 798;
+			boardH = 985;
+		}else{
+			boardW = 1148;
+			boardH = 798;
+		}
 		let w = $(window).width();
 		let h = $(window).height(); 
 		if($(window).width() > 1024){
-			h -= $('.board-holder').offset().top + 70;
-		}else{
-			h -= $('.board-holder').offset().top + 20;
-		}
-		w -= + 40 * 2; 
+	      h -= $('.board-holder').offset().top + 10;
+	    }else{
+	      h -= $('.board-holder').offset().top + 20;
+	    }
+
+		w -= + 20 * 2; 
 		let wScale = w / boardW; 
 		let hScale = h / boardH;
 		let scaling = Math.min(wScale, hScale);
@@ -87,13 +95,13 @@ class Board{
 					that.arrBoard[rowNumber][colNumber] = 1;
 					if(that.currentPlayer == 'red'){
 						that.currentPlayer = 'yellow';
-						$('.display-player h4').text('Spelare: Martin');
-						$('.player-brick').css("background-color", "yellow");						
+						$('.player-1').removeClass('active-player');
+						$('.player-2').addClass('active-player');							
 					}
 					else{
 						that.currentPlayer = 'red';
-						$('.display-player h4').text('Spelare: Anna');
-						$('.player-brick').css("background-color", "red");
+						$('.player-2').removeClass('active-player');
+						$('.player-1').addClass('active-player');
 					}
 					$(`.hover-brick-col[data-colNr='${colNumber}']`)
 					  .children().removeClass('red yellow').addClass(that.currentPlayer);
