@@ -126,6 +126,34 @@ h2.modal-title{
 .modal button span {
 	font-size: 250%;
 }
+
+/* Highscore */
+.highscore-jumbotron {
+	background-color: #a1c4fc;
+}
+
+.highscore-scroll {
+	/*
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	*/
+}
+
+.highscore-list {
+	/*
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	*/
+}
+
+.highscore-list .list-group-item {
+	background: transparent;
+}
+
 /* spela */
 .board-holder{
   overflow: hidden;
