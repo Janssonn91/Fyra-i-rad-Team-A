@@ -9,6 +9,7 @@ class Board{
 						  [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0] ];
 		this.createBoard();
+		$(window).on('resize', () => this.scale()); // kör metod scale när window ändrar storlek
 		this.scale();
 		this.hoverBrick();
 		this.dropBrick();
