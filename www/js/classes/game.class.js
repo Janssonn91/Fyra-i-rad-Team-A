@@ -25,7 +25,12 @@ class Game {
           emptySlots = emptySlots || b[row][col] === 0;
         }// col
       }// row
-      return winner ? winner : 'draw';
+      /*
+        Om det finns en vinnare retuneras 'winner'. 
+        Om det inte finns en vinnare tittar den om det inte finns några lediga columner kvar & retunerar då 'draw'.
+        Annars retuneras false alltså att det inte finns en vinnare och att det finns fortfarande lediga columner man kan lägga brickor i. 
+      */
+      return winner ? winner : (!emptySlots ? 'draw' : false);
     }// victoryLoop
 
   /*$('#player1-btn').click(function(){
