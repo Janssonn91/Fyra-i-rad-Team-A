@@ -91,19 +91,22 @@ class Board{
 			for(let i = emptyCols.length - 1; i>= 0; i--){
 				if (emptyCols.hasClass('noBrick')) {
 					$(emptyCols[i]).children().addClass(that.currentPlayer);
-
-					// testrad, lägger på önskad effekt på sista brickan
+					// lägger på önskad effekt på sista brickan
 					$(emptyCols[i]).children().addClass('blinking');
 					// timer räknar till 2sec och sedan tar bort classen blinking
 					setTimeout(function() {
 				       $(emptyCols[i]).children().removeClass('blinking');
 				   	}, 1000);
-					
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
 					that.arrBoard[rowNumber][colNumber] = that.currentPlayer;
 					that.game.victoryLoop();
+					// rader för countern
+					game.counter++;
+					let roundNumber = Math.ceil(game.counter/2);
+					$('#roundNumber').text(roundNumber);
+					// slut rader för countern
 					if(that.currentPlayer == 'red'){
 						that.currentPlayer = 'yellow';
 						$('.player-1').removeClass('active-player');

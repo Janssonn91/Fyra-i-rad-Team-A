@@ -4,7 +4,7 @@ class Game {
     this.board = new Board('#board',this);
     this.player = new Player(this);
     this.currentPlayer;
-    this.counter;
+    this.counter = 0;
     this.createPlayer(name);
   }
 
