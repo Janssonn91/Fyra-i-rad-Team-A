@@ -23,7 +23,7 @@ class Board{
 		if(window.location.pathname == '/spela.html'){
 			let boardW;
 			let boardH;
-			if($(window).width() <= 768){
+			if($(window).outerWidth() <= 768){
 				boardW = 798;
 				boardH = 985;
 			}else{
@@ -37,7 +37,6 @@ class Board{
 		    }else{
 		      h -= $('.board-holder').offset().top + 20;
 		    }
-
 			w -= + 20 * 2; 
 			let wScale = w / boardW; 
 			let hScale = h / boardH;
