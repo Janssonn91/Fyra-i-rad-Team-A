@@ -148,12 +148,8 @@ h2.modal-title{
 }
 
 .highscore-list {
-	/*
 	position: relative;
-	top: 0px;
-	left: 0px;
-	z-index: 1000;
-	*/ 
+	top: -770px;
 }
 
 .highscore-list .list-group-item {
