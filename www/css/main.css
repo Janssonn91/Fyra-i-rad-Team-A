@@ -2,6 +2,12 @@
 .fa-trophy {
 	color: gold;
 }
+.fa-trophy-silver {
+	color: #888;
+}
+.fa-trophy-bronze {
+	color: #CD7F32;
+}
 .fa-gamepad {
 	color: white;
 }
