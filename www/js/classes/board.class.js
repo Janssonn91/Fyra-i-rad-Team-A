@@ -97,7 +97,7 @@ class Board{
 					// timer räknar till 2sec och sedan tar bort classen blinking
 					setTimeout(function() {
 				       $(emptyCols[i]).children().removeClass('blinking');
-				   	}, 2000);
+				   	}, 1000);
 					
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
