@@ -16,29 +16,34 @@ class Board{
 	}
 
 	scale(){
-		let boardW;
-		let boardH;
-		if($(window).width() <= 768){
-			boardW = 798;
-			boardH = 985;
-		}else{
-			boardW = 1148;
-			boardH = 798;
-		}
-		let w = $(window).width();
-		let h = $(window).height(); 
-		if($(window).width() > 1024){
-	      h -= $('.board-holder').offset().top + 10;
-	    }else{
-	      h -= $('.board-holder').offset().top + 20;
-	    }
+		/* tar bort "TypeError: Cannot read property 'top' of undefined" 
+			som kommer på alla sidor förutom spela sidan genom att endast 
+			köra denna metoden om man är på spela.html sidan.*/
+		if(window.location.pathname == '/spela.html'){
+			let boardW;
+			let boardH;
+			if($(window).width() <= 768){
+				boardW = 798;
+				boardH = 985;
+			}else{
+				boardW = 1148;
+				boardH = 798;
+			}
+			let w = $(window).width();
+			let h = $(window).height(); 
+			if($(window).width() > 1024){
+		      h -= $('.board-holder').offset().top + 10;
+		    }else{
+		      h -= $('.board-holder').offset().top + 20;
+		    }
 
-		w -= + 20 * 2; 
-		let wScale = w / boardW; 
-		let hScale = h / boardH;
-		let scaling = Math.min(wScale, hScale);
-		$('#board').css('transform', `scale(${scaling})`).show();
-		$('.board-holder').width(boardW * scaling).height(boardH * scaling);
+			w -= + 20 * 2; 
+			let wScale = w / boardW; 
+			let hScale = h / boardH;
+			let scaling = Math.min(wScale, hScale);
+			$('#board').css('transform', `scale(${scaling})`).show();
+			$('.board-holder').width(boardW * scaling).height(boardH * scaling);
+		}
 	}
 
 	createBoard(){
