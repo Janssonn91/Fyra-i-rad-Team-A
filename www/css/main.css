@@ -153,11 +153,15 @@ h2.modal-title{
 	top: 0px;
 	left: 0px;
 	z-index: 1000;
-	*/
+	*/ 
 }
 
 .highscore-list .list-group-item {
-	background: transparent;
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+.highscore-list .list-group-item:nth-child(odd) {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* spela */
