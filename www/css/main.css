@@ -2,6 +2,12 @@
 .fa-trophy {
 	color: gold;
 }
+.fa-trophy-silver {
+	color: #888;
+}
+.fa-trophy-bronze {
+	color: #CD7F32;
+}
 .fa-gamepad {
 	color: white;
 }
@@ -126,6 +132,42 @@ h2.modal-title{
 .modal button span {
 	font-size: 250%;
 }
+
+/* Highscore */
+.highscore-jumbotron {
+	background-color: #a1c4fc;
+}
+
+.highscore-scroll {
+	/*
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	*/
+}
+
+.highscore-list {
+	position: relative;
+	top: -770px;
+}
+
+.highscore-list .list-group-item {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+.highscore-list .list-group-item:nth-child(odd) {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.highscore-list .list-group-item:first-child {
+	border-radius: 0;
+}
+
+.highscore-list .list-group-item:last-child {
+	border-radius: 0;
+}
+
 /* spela */
 .board-holder{
   overflow: hidden;

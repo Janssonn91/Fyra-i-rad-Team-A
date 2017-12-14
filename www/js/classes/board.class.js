@@ -102,7 +102,8 @@ class Board{
 					$(emptyCols[i]).removeClass('noBrick');
 					let rowNumber = $(emptyCols[i]).data('rownr');
 					let colNumber = $(emptyCols[i]).data('colnr');
-					that.arrBoard[rowNumber][colNumber] = 1;
+					that.arrBoard[rowNumber][colNumber] = that.currentPlayer;
+					that.game.victoryLoop();
 					if(that.currentPlayer == 'red'){
 						that.currentPlayer = 'yellow';
 						$('.player-1').removeClass('active-player');

@@ -5,14 +5,33 @@ class Game {
     this.player = new Player(this);
     this.currentPlayer;
     this.counter;
-    this.victoryLoop();
     this.createPlayer(name);
   }
 
   	victoryLoop(){
-
-  	
-  	}
+      let b = this.board.arrBoard , winner, emptySlots = false;
+      for(let row = 0; row <= 5; row++){
+        for(let col = 0; col <= 6; col++){
+          for(let p of ["red", "yellow"]){
+            if(
+              (row <= 2 && b[row][col] == p && b[row+1][col] == p && b[row+2][col] == p && p && b[row+3][col] == p) || 
+              (col <= 3 && b[row][col] == p && b[row][col+1] == p && b[row][col+2] == p && p && b[row][col+3] == p)  ||
+              (col <= 3 && row <= 2 && b[row][col] == p && b[row+1][col+1] == p && b[row+2][col+2] == p && p && b[row+3][col+3] == p)  ||
+              (col >= 3 && row <= 2 && b[row][col] == p && b[row+1][col-1] == p && b[row+2][col-2] == p && p && b[row+3][col-3] == p) 
+            ){
+              winner = player;
+            }
+          } // player
+          emptySlots = emptySlots || b[row][col] === 0;
+        }// col
+      }// row
+      /*
+        Om det finns en vinnare retuneras 'winner'. 
+        Om det inte finns en vinnare tittar den om det inte finns några lediga columner kvar & retunerar då 'draw'.
+        Annars retuneras false alltså att det inte finns en vinnare och att det finns fortfarande lediga columner man kan lägga brickor i. 
+      */
+      return winner ? winner : (!emptySlots ? 'draw' : false);
+    }// victoryLoop
 
   /*$('#player1-btn').click(function(){
   // lägg formulärets värde i name
