@@ -157,7 +157,15 @@ h2.modal-title{
 }
 
 .highscore-list .list-group-item:nth-child(odd) {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.highscore-list .list-group-item:first-child {
+	border-radius: 0;
+}
+
+.highscore-list .list-group-item:last-child {
+	border-radius: 0;
 }
 
 /* spela */
