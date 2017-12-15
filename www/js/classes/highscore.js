@@ -4,7 +4,7 @@ class Highscore{
 		this.game = game;
 		this.list = [
 			{
-				name: "Anna", 
+				name: "Martin", 
 				score: 4
 			},
 			{
@@ -36,4 +36,17 @@ class Highscore{
 	renderList(){
 
 	} // Render List
-} // class Highscore
+
+
+		// JSON._classes(Highscore);
+		// JSON._save('highscore.json', list).then(function(){
+		//   console.log('Saved!');
+		// });
+
+		// JSON._load('highscore.json').then(function(players){
+		//   	console.log(players);
+		//  });
+
+
+// todoLista = data.todo;
+  	// doneTodo = data.done;
