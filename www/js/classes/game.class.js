@@ -6,6 +6,9 @@ class Game {
     this.currentPlayer;
     this.counter = 0;
     this.createPlayer(name);
+    this.highscore = new Highscore(this);
+    this.highscore.createList(this.highscore.list);
+    console.log(this.highscore);
   }
 
   	victoryLoop(){
@@ -19,7 +22,7 @@ class Game {
               (col <= 3 && row <= 2 && b[row][col] == p && b[row+1][col+1] == p && b[row+2][col+2] == p && p && b[row+3][col+3] == p)  ||
               (col >= 3 && row <= 2 && b[row][col] == p && b[row+1][col-1] == p && b[row+2][col-2] == p && p && b[row+3][col-3] == p) 
             ){
-              winner = player;
+              winner = currentPlayer.name;
             }
           } // player
           emptySlots = emptySlots || b[row][col] === 0;
