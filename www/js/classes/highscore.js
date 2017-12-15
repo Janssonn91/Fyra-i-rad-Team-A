@@ -32,12 +32,9 @@ class Highscore{
           <li class="list-group-item no-border"><span class="trophy px-3"></span>${player.name}<span class="float-right mr-5 pr-5">${player.score}</span></li>
         `);
       } //for loop 
-		} //createlist
-	renderList(){
-
-	} // Render List
-
-
+	} //createlist
+	
+}
 		// JSON._classes(Highscore);
 		// JSON._save('highscore.json', list).then(function(){
 		//   console.log('Saved!');

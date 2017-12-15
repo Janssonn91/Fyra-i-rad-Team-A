@@ -1,15 +1,20 @@
 class Game {
   constructor(){
     this.board = new Board('#board',this);
-    this.currentPlayer;
-    this.player1;
-    this.player2;
+    if(localStorage.playerInput){
+      this.createPlayerStep2();
+      console.log(this.player1);
+      console.log(this.player2);
+    }
+    else {
+      this.createPlayer();
+    }
     this.counter = 0;
-    this.createPlayer(name);
+    this.currentPlayer;
     this.highscore = new Highscore(this);
     this.highscore.createList(this.highscore.list);
     // this.highscore.saveList(this.highscore.list);
-    this.save();
+    /*this.save();*/
   }
 
   	victoryLoop(){
@@ -40,6 +45,53 @@ class Game {
       */
       return winner ? winner : (!emptySlots ? 'draw' : false);
     }// victoryLoop
+
+
+
+  createPlayer(){
+
+    $(document).on('click', '.button', function(){
+      let input1 = $('#input-1').val();
+      let input2 = $('#input-2').val();
+      let radio1 = $('#human-1').is(':checked');
+      let radio2 = $('#cpu-1').is(':checked');
+      let radio3 = $('#human-2').is(':checked');
+      let radio4 = $('#cpu-2').is(':checked');
+
+
+      localStorage.playerInput = JSON.stringify({
+        input1: input1,
+        input2: input2,
+        radio1: radio1,
+        radio3: radio3
+      });
+
+     
+      location.href = '/spela.html';
+    });
+  }
+
+  createPlayerStep2(){
+     let x = JSON.parse(localStorage.playerInput);
+     delete localStorage.playerInput;
+     if(x.radio1){
+        this.player1 = new Player(this,x.input1,'red');
+      }else{
+        this.player1 = new Computer(this,x.input1,'red');
+      }
+      if(x.radio3){
+        this.player2 = new Player(this,x.input2,'yellow');
+      }else{
+        this.player2 = new Computer(this,x.input2,'yellow');
+      }
+  }
+
+
+}
+
+
+
+
 
   /*$('#player1-btn').click(function(){
   // lägg formulärets värde i name
@@ -78,9 +130,6 @@ $('#player2-btn').click(function(){
     }
 });*/
 
-createPlayer(name){
-  
-}
 
 
 
