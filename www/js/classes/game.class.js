@@ -1,14 +1,15 @@
 class Game {
-
   constructor(){
     this.board = new Board('#board',this);
-    this.player = new Player(this);
     this.currentPlayer;
+    this.player1;
+    this.player2;
     this.counter = 0;
     this.createPlayer(name);
     this.highscore = new Highscore(this);
     this.highscore.createList(this.highscore.list);
-    console.log(this.highscore);
+    // this.highscore.saveList(this.highscore.list);
+    this.save();
   }
 
   	victoryLoop(){
@@ -17,9 +18,13 @@ class Game {
         for(let col = 0; col <= 6; col++){
           for(let p of ["red", "yellow"]){
             if(
+              // Vertical
               (row <= 2 && b[row][col] == p && b[row+1][col] == p && b[row+2][col] == p && p && b[row+3][col] == p) || 
+              // Horizontel
               (col <= 3 && b[row][col] == p && b[row][col+1] == p && b[row][col+2] == p && p && b[row][col+3] == p)  ||
+              // Diagonal \
               (col <= 3 && row <= 2 && b[row][col] == p && b[row+1][col+1] == p && b[row+2][col+2] == p && p && b[row+3][col+3] == p)  ||
+              // Diagonal /
               (col >= 3 && row <= 2 && b[row][col] == p && b[row+1][col-1] == p && b[row+2][col-2] == p && p && b[row+3][col-3] == p) 
             ){
               winner = currentPlayer.name;
@@ -74,33 +79,42 @@ $('#player2-btn').click(function(){
 });*/
 
 createPlayer(name){
-if(name === ''){
-    return;
-  };
-
-  if($('#exampleRadios1').is(':checked')) { 
-    let player1;
-    player1 = new Human('app', name, 'red');
-  }
-  else{
-    let player1;
-    player1 = new Computer('app', name, 'red');
-    }
-
-  if($('#exampleRadios3').is(':checked')) { 
-    let player2;
-    player2 = new Human('app', name, 'yellow');
-      if(player2.name){
-    alert(player2.name + ' är human ' + player2.color);
-    }
-  }
-  else{
-    let player2;
-    player2 = new Computer('app', name, 'yellow');
-    alert(player2.name + ' är dator ' + player2.color);
-    }
-};
-
+  
 }
+
+
+
+
+
+
+
+
+// if(name === ''){
+//     return;
+//   };
+
+//   if($('#exampleRadios1').is(':checked')) { 
+//     let ;
+//     player1 = new Human('app', name, '');
+//   }
+//   else{
+//     let player1;
+//     player1 = new Computer('app', name, 'red');
+//     }
+
+//   if($('#exampleRadios3').is(':checked')) { 
+//     let player2;
+//     player2 = new Human('app', name, 'yellow');
+//       if(player2.name){
+//     alert(player2.name + ' är human ' + player2.color);
+//     }
+//   }
+//   else{
+//     let player2;
+//     player2 = new Computer('app', name, 'yellow');
+//     alert(player2.name + ' är dator ' + player2.color);
+//     }
+
+// }
 
 
