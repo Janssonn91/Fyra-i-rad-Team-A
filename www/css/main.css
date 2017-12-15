@@ -1,12 +1,26 @@
 /*	Header  */
-.fa-trophy {
+
+li:nth-child(1) .trophy:before{
+	font-family: 'FontAwesome';
+	content: "\f091";
+	font-size: 22px;
 	color: gold;
 }
-.fa-trophy-silver {
+li:nth-child(2) .trophy:before{
+	font-family: 'FontAwesome';
+	content: "\f091";
+	font-size: 22px;
 	color: #888;
 }
-.fa-trophy-bronze {
+li:nth-child(3) .trophy:before{
+	font-family: 'FontAwesome';
+	content: "\f091";
+	font-size: 22px;
 	color: #CD7F32;
+}
+li:nth-child(n+4){
+	padding-left: 2.5rem;
+
 }
 .fa-gamepad {
 	color: white;
