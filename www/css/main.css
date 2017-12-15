@@ -12,7 +12,7 @@
 	color: white;
 }
 .fa-book{
-	color: #aa0a09;
+	color: black;
 }
 .logo{
 	width: 80px;
@@ -139,8 +139,7 @@ h2.modal-title{
 }
 
 .highscore-scroll {
-	/*
-	position: relative;
+	/*position: relative;
 	top: 0px;
 	left: 0px;
 	z-index: 0;
