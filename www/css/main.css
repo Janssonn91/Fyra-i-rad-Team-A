@@ -271,3 +271,8 @@ h2.modal-title{
   border-radius: 50%;
   border:1px solid black;
 }
+
+.table {
+	margin-top: 200px;
+	padding-left: 100px;
+}
