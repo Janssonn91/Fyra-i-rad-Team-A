@@ -58,6 +58,7 @@ class Game {
       let radio3 = $('#human-2').is(':checked');
       let radio4 = $('#cpu-2').is(':checked');
 
+      
 
       localStorage.playerInput = JSON.stringify({
         input1: input1,
@@ -66,8 +67,9 @@ class Game {
         radio3: radio3
       });
 
-     
+     if(input1 && input2){
       location.href = '/spela.html';
+      }
     });
   }
 
