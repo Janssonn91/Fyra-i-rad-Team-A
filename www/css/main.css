@@ -1,24 +1,24 @@
 /*	Header  */
 
-li:nth-child(1) .trophy:before{
+.highscore-list li:nth-child(1) .trophy:before{
 	font-family: 'FontAwesome';
 	content: "\f091";
 	font-size: 22px;
 	color: gold;
 }
-li:nth-child(2) .trophy:before{
+.highscore-list li:nth-child(2) .trophy:before{
 	font-family: 'FontAwesome';
 	content: "\f091";
 	font-size: 22px;
 	color: #888;
 }
-li:nth-child(3) .trophy:before{
+.highscore-list li:nth-child(3) .trophy:before{
 	font-family: 'FontAwesome';
 	content: "\f091";
 	font-size: 22px;
 	color: #CD7F32;
 }
-li:nth-child(n+4){
+.highscore-list li:nth-child(n+4){
 	padding-left: 2.5rem;
 
 }
