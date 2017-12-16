@@ -49,8 +49,9 @@ nav, .bg-jumbotron {
 	background-color: #2f77ed;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
+
+/* .button {
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -61,13 +62,13 @@ nav, .bg-jumbotron {
     display: inline-block;
     font-size: 16px;
 
-}
+} */
 
-.button a {
+/* .button a {
 
 color: white;
 
-}
+} */
 
 .nav-link{
 	font-size: 1.3rem;
