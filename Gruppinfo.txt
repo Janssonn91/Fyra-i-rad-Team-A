@@ -21,3 +21,4 @@ Fredag 8 dec, 0,5 poäng gjorda (34 totalt, helt klar)
 Burndown Sprint 2 (121,5 poäng totalt):
 Tisdag 12 dec, 121,5 kvar
 Onsdag 13 dec, 0,5 poäng gjorda (120 kvar) Men en del i testing!
+Lördag 14 dec, 14,5 poäng gjorda (107 kvar varav 43 i testing)
