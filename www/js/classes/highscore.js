@@ -29,7 +29,7 @@ class Highscore{
 	createList(highscore){
 		for (let player of highscore){
 			$(".highscore-list").append(`
-          <li class="list-group-item no-border"><span class="trophy px-3"></span>${player.name}<span class="float-right mr-5 pr-5">${player.score}</span></li>
+          <li class="list-group-item no-border"><span class="trophy px-3"></span>${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.score}</span></li>
         `);
       } //for loop 
 	} //createlist

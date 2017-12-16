@@ -149,20 +149,7 @@ h2.modal-title{
 
 /* Highscore */
 .highscore-jumbotron {
-	background-color: #a1c4fc;
-}
 
-.highscore-scroll {
-	/*position: relative;
-	top: 0px;
-	left: 0px;
-	z-index: 0;
-	*/
-}
-
-.highscore-list {
-	position: relative;
-	top: -770px;
 }
 
 .highscore-list .list-group-item {
