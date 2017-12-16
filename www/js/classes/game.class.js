@@ -84,6 +84,8 @@ class Game {
       }else{
         this.player2 = new Computer(this,x.input2,'yellow');
       }
+      $('.player1Name').text(this.player1.name);
+      $('.player2Name').text(this.player2.name);
   }
 
 
