@@ -69,6 +69,8 @@ class Game {
      if(input1.replace(/^\s+|\s+$/g, "") && input2.replace(/^\s+|\s+$/g, "")){
       location.href = '/spela.html';
       }
+      else{
+      }
     });
   }
 
