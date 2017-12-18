@@ -283,3 +283,9 @@ h2.modal-title{
 .yellow-circle{
 	color: yellow;
 }
+
+.form-error{
+	border: 1px solid red;
+	color: black;
+}
+

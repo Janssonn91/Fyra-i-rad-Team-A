@@ -69,8 +69,16 @@ class Game {
      if(input1.replace(/^\s+|\s+$/g, "") && input2.replace(/^\s+|\s+$/g, "")){
       location.href = '/spela.html';
       }
-      else{
+      else if(input1.replace(/^\s+|\s+$/g, "")){
+        $('#input-1').removeClass('form-error');
+        $('#input-2').attr('placeholder', 'Fyll i namn här tack!');
+        $('#input-2').addClass('form-error');
       }
+      else{
+        $('#input-2').removeClass('form-error');
+        $('#input-1').attr('placeholder', 'Fyll i namn här tack!');
+        $('#input-1').addClass('form-error');
+        }
     });
   }
 
