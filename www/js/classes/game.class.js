@@ -39,8 +39,6 @@ class Game {
             (col >= 3 && row <= 2 && b[row][col] == p && b[row+1][col-1] == p && b[row+2][col-2] == p && p && b[row+3][col-3] == p) 
           ){
             winner = this.currentPlayer.name;
-            console.log(winner);
-
           }
         } // player
         emptySlots = emptySlots || b[row][col] === 0;
@@ -65,7 +63,12 @@ class Game {
         return this.currentPlayer;               
       } 
       else if(gameover == "draw"){
-        $('#draw').modal();
+        new Modal(
+          `Det blev oavgjort.`,
+          [
+            `Spela igen? Tryck på knappen.`
+          ]
+        );
         return "draw";
       }
       else{
@@ -139,7 +142,7 @@ class Game {
 
     if(this.currentPlayer instanceof Computer){
       $('.hover-brick-col').children().removeClass('transparent');
-      console.log('träff');
+      
         }
 
 
