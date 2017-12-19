@@ -8,6 +8,7 @@ class Game {
       this.createPlayer();
     }
     this.counter = 0;
+    this.roundNumber;
     this.highscore = new Highscore(this);
     this.highscore.createList(this.highscore.list);
     // this.highscore.saveList(this.highscore.list);
@@ -15,6 +16,7 @@ class Game {
   }
 
 	victoryLoop(){
+    const that = this;
     let b = this.board.arrBoard , winner, emptySlots = false;
     for(let row = 0; row <= 5; row++){
       for(let col = 0; col <= 6; col++){
@@ -44,7 +46,8 @@ class Game {
     */
     let gameover = winner ? winner : (!emptySlots ? 'draw' : false);
       if (gameover == this.currentPlayer.name){
-       $('#win').modal();                
+       $('#win').modal();
+       that.highscore.savePlayer(this.roundNumber, this.currentPlayer.name);               
       } 
       else if(gameover == "draw"){
         $('#draw').modal();
@@ -151,12 +154,13 @@ class Game {
         let rowNumber = $(emptyCols[i]).data('rownr');
         let colNumber = $(emptyCols[i]).data('colnr');
         this.board.arrBoard[rowNumber][colNumber] = this.currentPlayer.color;
-        this.victoryLoop();
         // rader för countern
         this.counter++;
-        let roundNumber = Math.ceil(this.counter/2);
-        $('#roundNumber').text(roundNumber);
+        this.roundNumber = Math.ceil(this.counter/2);
+        $('#roundNumber').text(this.roundNumber);
         // slut rader för countern
+        this.victoryLoop();
+        
         this.togglePlayer();
         let hoverCol = $(`.hover-brick-col[data-colNr='${colNumber}']`).children();
         hoverCol.removeClass('red yellow')
