@@ -35,7 +35,13 @@ class Highscore{
 	} //createlist
 	savePlayer(rounds, name){
   		const that = this;
-  		console.log(rounds, name);
+  		let score = rounds;
+  		this.list.push({name, rounds});
+  		//console.log(rounds, name, this.list.length);
+  		for(let i = 0; i < this.list.length; i++){
+  			console.log(this.list[i]);
+  		}
+
   	}
 }
 		// JSON._classes(Highscore);
