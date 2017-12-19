@@ -8,9 +8,9 @@ class Highscore {
 	createList(highscore){
 		for (let player of highscore){
 			$(".highscore-list").append(`
-          <li class="list-group-item no-border"><span class="trophy px-3"></span>${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.score}</span></li>
-        `);
-      } //for loop 
+        <li class="list-group-item no-border"><span class="trophy px-3"></span>${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.score}</span></li>
+      `);
+    } //for loop 
 	} //createlist
 
 	saveHighscore(rounds, name){
@@ -26,11 +26,11 @@ class Highscore {
 		let counter = 1;
 		JSON._load('highscore.json').then(function(players){
 		   	for (let player of players){
-			$(".highscore-list").append(`
-          <li class="list-group-item no-border"><span class="trophy px-3"></span>${counter}. ${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.rounds}</span></li>
-        `);
-		counter++;
-		}
+					$(".highscore-list").append(`
+          	<li class="list-group-item no-border"><span class="trophy px-3"></span>${counter}. ${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.rounds}</span></li>
+        	`);
+				counter++;
+			}
 		});// json load
 	}
 

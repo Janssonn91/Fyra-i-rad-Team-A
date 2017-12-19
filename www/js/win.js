@@ -1,32 +1,30 @@
-// class Win{
-//   constructor(game){
-//     this.game = game;
-//   }
-//   // checkForVictory(roundNumber, name){
-//   //   let win = $(`
-//   //     <div class="modal fade" id="win" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-//   //         <div class="modal-dialog" role="document">
-//   //           <div class="modal-content">
-//   //             <div class="modal-header">
-//   //               <h2 class="modal-title text-danger">Grattis!</h2>
-//   //             </div>
-//   //             <div class="modal-body mx-4">
-//   //               <p>Spelare ${"name"} har vunnit!</p>
-//   //               <p> Det gick ${"roundNumber"} rundor till vinst.</p>
-//   //               <p>Spela igen? Tryck på knappen.
-//   //             </div>
-//   //             <div class="modal-footer">
-//   //               <a href="/Namn.html"><button type="button" class="btn btn-danger" data-dismiss="modal">Spela igen</button></a>
-//   //             </div>
-//   //           </div>
-//   //         </div>
-//   //       </div>
-//   //   `);
-//   //   // if(window.location.pathname == '/spela.html'){
-//   //     do {
-//   //       $('main').append(win);
-//   //     console.log("Hejsan")
-//   //   // };
-//   //     }
-//   // }
-// }
+class Modal{
+  constructor(title, body, btn = 'Spela igen'){
+    this.title = title;
+    this.body = '<p>' + body.join('</p><p>') + '</p>';
+    this.btn = btn;
+    this.drawModal();
+  }
+
+  drawModal(){
+    $('main #main-modal').remove();
+    $('main').append(`
+      <div class="modal fade" id="main-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-danger">${this.title}</h2>
+              </div>
+              <div class="modal-body mx-4">
+                ${this.body}
+              </div>
+              <div class="modal-footer">
+                <a href="/Namn.html"><button type="button" class="btn btn-danger" data-dismiss="modal">${this.btn}</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    `);
+    $('#main-modal').modal();
+  }
+}

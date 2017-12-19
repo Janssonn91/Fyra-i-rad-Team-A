@@ -53,47 +53,25 @@ class Game {
     */
     let gameover = winner ? winner : (!emptySlots ? 'draw' : false);
       if (gameover == this.currentPlayer.name){
-        this.checkForVictory();
-       // this.win.checkForVictory(this.roundNumber, this.currentPlayer.name);
-       that.highscore.savePlayer(this.roundNumber, this.currentPlayer.name);               
+        new Modal(
+          `Grattis ${this.currentPlayer.name}`,
+          [
+            `Spelare ${this.currentPlayer.name} har vunnit!`,
+            `Det gick ${this.roundNumber} rundor till vinst.`,
+            `Spela igen? Tryck på knappen.`
+          ]
+        );
+        this.highscore.saveHighscore(this.roundNumber, this.currentPlayer.name);
+        return this.currentPlayer;               
       } 
       else if(gameover == "draw"){
         $('#draw').modal();
-        throw 'Det är oavgjort.'; 
+        return "draw";
       }
       else{
         return false;
       }
-  }// victoryLoop
-
-    checkForVictory(roundNumber, name){
-    let win = $(`
-      <div class="modal fade" id="win" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title text-danger">Grattis!</h2>
-              </div>
-              <div class="modal-body mx-4">
-                <p>Spelare ${"name"} har vunnit!</p>
-                <p> Det gick ${"roundNumber"} rundor till vinst.</p>
-                <p>Spela igen? Tryck på knappen.
-              </div>
-              <div class="modal-footer">
-                <a href="/Namn.html"><button type="button" class="btn btn-danger" data-dismiss="modal">Spela igen</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-    `);
-    // if(window.location.pathname == '/spela.html'){
-      // do {
-        $('main').append(win);
-      // console.log("Hejsan")
-    // };
-      // }
-    }
-    
+  }    
 
   createPlayer(){
     $(document).on('click', '.button', function(){
@@ -205,17 +183,17 @@ class Game {
         this.counter++;
         this.roundNumber = Math.ceil(this.counter/2);
         $('#roundNumber').text(this.roundNumber);
-        // slut rader för countern
-        this.victoryLoop();
-        
-        
         let hoverCol = $(`.hover-brick-col[data-colNr='${colNumber}']`).children();
-        hoverCol.removeClass('red yellow')
+        hoverCol.removeClass('red yellow');
         if(!(this.currentPlayer instanceof Computer)){
           hoverCol.addClass(this.currentPlayer.color);
         }
-        this.hoverBrick();
         this.togglePlayer();
+        // slut rader för countern
+        if(this.victoryLoop()){return;
+        }
+        
+        this.hoverBrick();
         return true;
       }
       return false;
