@@ -158,6 +158,15 @@ class Game {
  
   hoverBrick(){ 
     const that = this;
+
+    if(this.currentPlayer instanceof Computer){
+      $('.hover-brick-col').children().removeClass('transparent');
+      console.log('träff');
+        }
+
+
+
+
     $(this.board.boardId).on('mouseover', '.board-col', function(){
       let colNumber = $(this).data('colnr');
       $(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer.color);
@@ -199,12 +208,14 @@ class Game {
         // slut rader för countern
         this.victoryLoop();
         
-        this.togglePlayer();
+        
         let hoverCol = $(`.hover-brick-col[data-colNr='${colNumber}']`).children();
         hoverCol.removeClass('red yellow')
         if(!(this.currentPlayer instanceof Computer)){
           hoverCol.addClass(this.currentPlayer.color);
         }
+        this.hoverBrick();
+        this.togglePlayer();
         return true;
       }
       return false;

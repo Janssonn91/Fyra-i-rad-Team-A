@@ -235,6 +235,10 @@ h2.modal-title{
 	background-color: yellow;
 }
 
+.transparent{
+	background-color: transparent;
+}
+
 .blinking{
 	animation: blink-animation 0.5s  infinite;
   -webkit-animation: blink-animation 0.5s  infinite;

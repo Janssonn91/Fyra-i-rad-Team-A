@@ -14,6 +14,7 @@ class Computer extends Player{
         colNumber = Math.floor(Math.random()*7);
     	} while(!this.game.makeMove(colNumber));
     }, 1500);
+    $('.hover-brick-col').children().addClass('transparent');
 	}
 
 }
