@@ -115,6 +115,9 @@ h1{
 .highscore-h1{
 	font-size: 3rem;
 }
+.trophy-big{
+	color:#CD7F32;
+}
 @media screen and (min-width: 300px) and (max-width: 599px){
   .start-bild {
     width: 125%;
