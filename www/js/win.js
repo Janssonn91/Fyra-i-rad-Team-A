@@ -1,9 +1,9 @@
-let gameOver = $(`
-    <div class="modal fade" id="hidden-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+let win = $(`
+    <div class="modal fade" id="win" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h2 class="modal-title text-danger" id="exampleModalLabel">Spelregler</h2>
+              <h2 class="modal-title text-danger" id="exampleModalLabel">Grattis!</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -18,9 +18,6 @@ let gameOver = $(`
         </div>
       </div>
   `)
-
-// $('winnder-modal').click(function(e){
   if(window.location.pathname == '/spela.html'){
-    $('main').append(gameOver);
+    $('main').append(win);
   };
-// });
