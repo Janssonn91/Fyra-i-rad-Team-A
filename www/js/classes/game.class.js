@@ -3,8 +3,6 @@ class Game {
     this.board = new Board('#board',this);
     if(localStorage.playerInput){
       this.createPlayerStep2();
-      console.log(this.player1);
-      console.log(this.player2);
     }
     else {
       this.createPlayer();
@@ -72,13 +70,98 @@ class Game {
     });
   }
 
+   togglePlayer(){
+    if(this.currentPlayer == this.player1){
+      this.currentPlayer = this.player2;
+      // if(this.player2 instanceof Player){
+      //  this.player2.dropBrick();
+      // } else {
+      //  this.player2.computerDropBrick();
+      // }
+      
+      $('.player-1').removeClass('active-player');
+      $('.player-2').addClass('active-player');             
+    }
+    else{
+      this.currentPlayer = this.player1;
+      // if(this.player1 instanceof Player){
+      //  this.player1.dropBrick();
+      // } else {
+      //  this.player1.computerDropBrick();
+      // }
+      $('.player-2').removeClass('active-player');
+      $('.player-1').addClass('active-player');
+    }
+    if(this.currentPlayer instanceof Computer){
+      this.currentPlayer.computerDropBrick();
+    }
+  }
+ 
+  hoverBrick(){ 
+    const that = this;
+    $(this.board.boardId).on('mouseover', '.board-col', function(){
+      let colNumber = $(this).data('colnr');
+      $(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer.color);
+    });
+    $(this.board.boardId).on('mouseleave', '.board-col', function(){
+      let colNumber = $(this).data('colnr');
+      $(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
+    });
+  }
+
+  dropBrick(){
+    const that = this;
+    $(this.board.boardId).on('click', '.board-col', function(){
+      let colNumber = $(this).data('colnr');
+      that.makeMove(colNumber);
+    });
+  }
+
+
+  makeMove(colNumber){
+    let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
+    for(let i = emptyCols.length - 1; i>= 0; i--){
+      if (emptyCols.hasClass('noBrick')) {
+        $(emptyCols[i]).children().addClass(this.currentPlayer.color);
+        // lägger på önskad effekt på sista brickan
+        $(emptyCols[i]).children().addClass('blinking');
+        // timer räknar till 2sec och sedan tar bort classen blinking
+        setTimeout(function() {
+             $(emptyCols[i]).children().removeClass('blinking');
+          }, 1000);
+        $(emptyCols[i]).removeClass('noBrick');
+        let rowNumber = $(emptyCols[i]).data('rownr');
+        let colNumber = $(emptyCols[i]).data('colnr');
+        this.board.arrBoard[rowNumber][colNumber] = this.currentPlayer.color;
+        this.victoryLoop();
+        // rader för countern
+        this.counter++;
+        let roundNumber = Math.ceil(this.counter/2);
+        $('#roundNumber').text(roundNumber);
+        // slut rader för countern
+        this.togglePlayer();
+        let hoverCol = $(`.hover-brick-col[data-colNr='${colNumber}']`).children();
+        hoverCol.removeClass('red yellow')
+        if(!(this.currentPlayer instanceof Computer)){
+          hoverCol.addClass(this.currentPlayer.color);
+        }
+        return true;
+      }
+      return false;
+    }
+  }
+
   createPlayerStep2(){
    let x = JSON.parse(localStorage.playerInput);
    delete localStorage.playerInput;
    if(x.radio1){
       this.player1 = new Player(this,x.input1,'red');
+      // this.currentPlayer = this.player1;
+      // this.currentPlayer.dropBrick();
     }else{
       this.player1 = new Computer(this,x.input1,'red');
+      // this.currentPlayer = this.player1;
+      // this.currentPlayer.computerDropBrick();
     }
     if(x.radio3){
       this.player2 = new Player(this,x.input2,'yellow');
@@ -87,8 +170,12 @@ class Game {
     }
     $('.player1Name').text(this.player1.name);
     $('.player2Name').text(this.player2.name);
-    this.currentPlayer = this.player1;
-    this.currentPlayer.dropBrick();
+    // add event handlers
+    this.hoverBrick();
+    this.dropBrick();
+    // start the game
+    this.currentPlayer = this.player2;
+    this.togglePlayer();
   }
 }
 
