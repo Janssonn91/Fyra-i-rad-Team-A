@@ -20,7 +20,7 @@
       <div class="row">
         <nav class="navbar navbar-expand-md navbar-dark col-12">
           <a href="/"><img class="logo mr-4 mb-3 mb-md-0" src="/imgs/4-i-rad-logo.png" alt="4 i rad-logo"></a>
-          <a class="btn btn-danger mt-1 pr-2 mr-auto" href="/Namn.html">Avbryt spelet</a>
+          <a class="btn btn-danger mt-1 pr-2 mr-auto" class="cancel-game" href="/Namn.html">Avbryt spelet</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,7 +39,7 @@
       </div>
     </header>
     <main>
-      <div class="board-holder">
+      <div class="board-holder winner-modal">
         <div id="board">
           <div class="card bg-light display-players">
             <h3 class="card-header display-4 text-center">Spelare</h3>
@@ -82,6 +82,8 @@
     <script src="/js/libs/bootstrap-4-beta.js"></script>
     <!-- Application specific JavaScript -->
     <script src="/js/spelregler.js"></script>
+    <script src="/js/win.js"></script>
+    <script src="/js/draw.js"></script>
     <script src="/js/classes/game.class.js"></script>
     <script src="/js/classes/board.class.js"></script>
     <script src="/js/classes/player.class.js"></script>
