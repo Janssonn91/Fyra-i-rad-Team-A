@@ -31,6 +31,7 @@ class Game {
           ){
             winner = this.currentPlayer.name;
             console.log(winner);
+
           }
         } // player
         emptySlots = emptySlots || b[row][col] === 0;
@@ -41,10 +42,17 @@ class Game {
       Om det inte finns en vinnare tittar den om det inte finns några lediga columner kvar & retunerar då 'draw'.
       Annars retuneras false alltså att det inte finns en vinnare och att det finns fortfarande lediga columner man kan lägga brickor i. 
     */
-    return winner ? winner : (!emptySlots ? 'draw' : false);
+    let gameover = winner ? winner : (!emptySlots ? 'draw' : false);
+      if (gameover == this.currentPlayer.name){
+       $('#win').modal();                
+      } 
+      else if(gameover == "draw"){
+        $('#draw').modal();
+      }
+      else{
+        return null;
+      }
   }// victoryLoop
-
-
 
   createPlayer(){
     $(document).on('click', '.button', function(){
@@ -67,6 +75,16 @@ class Game {
      if(input1.replace(/^\s+|\s+$/g, "") && input2.replace(/^\s+|\s+$/g, "")){
       location.href = '/spela.html';
       }
+      else if(input1.replace(/^\s+|\s+$/g, "")){
+        $('#input-1').removeClass('form-error');
+        $('#input-2').attr('placeholder', 'Fyll i namn här tack!');
+        $('#input-2').addClass('form-error');
+      }
+      else{
+        $('#input-2').removeClass('form-error');
+        $('#input-1').attr('placeholder', 'Fyll i namn här tack!');
+        $('#input-1').addClass('form-error');
+        }
     });
   }
 

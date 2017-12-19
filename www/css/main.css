@@ -29,7 +29,10 @@
 	color: gold;
 }
 .fa-book{
-	color: black;
+	color: darkblue;
+}
+.fa-star{
+	color: #2f77ed;
 }
 .logo{
 	width: 80px;
@@ -89,7 +92,7 @@ footer {
 .text-andra-spel {
 	color: #aa0a09;
 }
-.jumbotron a.btn {
+.jumbotron a.btn, .btn-start{
 	background-color: #aa0a09;
 }
 .jumbotron a.btn:hover {
@@ -106,8 +109,18 @@ footer {
 .jumbotron{
 	padding: 4rem 1rem;
 }
+
+.jumbotron2{
+	padding: 10rem 1rem;
+}
 h1{
 	font-size: 4.3vw;
+}
+.highscore-h1{
+	font-size: 3rem;
+}
+.trophy-big{
+	color:#CD7F32;
 }
 @media screen and (min-width: 300px) and (max-width: 599px){
   .start-bild {
@@ -273,4 +286,18 @@ h2.modal-title{
   width: 25px;
   border-radius: 50%;
   border:1px solid black;
+}
+
+/* namn.html */
+.red-circle{
+	color: red;
+}
+
+.yellow-circle{
+	color: yellow;
+}
+
+.form-error{
+	border: 1px solid red;
+	color: black;
 }
