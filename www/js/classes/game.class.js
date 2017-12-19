@@ -188,12 +188,12 @@ class Game {
         if(!(this.currentPlayer instanceof Computer)){
           hoverCol.addClass(this.currentPlayer.color);
         }
+        this.hoverBrick();
         this.togglePlayer();
         // slut rader för countern
         if(this.victoryLoop()){return;
         }
         
-        this.hoverBrick();
         return true;
       }
       return false;
