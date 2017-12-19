@@ -33,7 +33,10 @@ class Highscore{
         `);
       } //for loop 
 	} //createlist
-	
+	savePlayer(rounds, name){
+  		const that = this;
+  		console.log(rounds, name);
+  	}
 }
 		// JSON._classes(Highscore);
 		// JSON._save('highscore.json', list).then(function(){
@@ -47,3 +50,4 @@ class Highscore{
 
 // todoLista = data.todo;
   	// doneTodo = data.done;
+
