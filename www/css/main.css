@@ -109,6 +109,10 @@ footer {
 .jumbotron{
 	padding: 4rem 1rem;
 }
+
+.jumbotron2{
+	padding: 10rem 1rem;
+}
 h1{
 	font-size: 4.3vw;
 }
