@@ -1,5 +1,7 @@
 let game = new Game();
 
+
+
 // $('#player1-btn').click(function(){
 //   // lägg formulärets värde i name
 //   let name = ($('#player1').val());

@@ -10,7 +10,14 @@ class Game {
     this.counter = 0;
     this.roundNumber;
     this.highscore = new Highscore(this);
-    this.highscore.createList(this.highscore.list);
+    JSON._load('highscore')
+    .then((data) => {
+      // Retrieve the app from JSON
+      for(let players of data){
+        this.highscore.list.push(players);
+      }
+      this.highscore.renderHighscore();
+    })
     // this.highscore.saveList(this.highscore.list);
     /*this.save();*/
   }
@@ -51,9 +58,10 @@ class Game {
       } 
       else if(gameover == "draw"){
         $('#draw').modal();
+        throw 'Det är oavgjort.'; 
       }
       else{
-        return null;
+        return false;
       }
   }// victoryLoop
 

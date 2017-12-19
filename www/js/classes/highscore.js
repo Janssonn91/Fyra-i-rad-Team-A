@@ -1,29 +1,8 @@
-class Highscore{
+class Highscore {
 	constructor(game){
 		this.placering;
 		this.game = game;
-		this.list = [
-			{
-				name: "Martin", 
-				score: 4
-			},
-			{
-				name: "Anna", 
-				score: 4
-			},
-			{
-				name: "Anna", 
-				score: 4
-			},
-			{
-				name: "Anna", 
-				score: 4
-			},
-			{
-				name: "Anna", 
-				score: 4
-			}
-		];
+		this.list = [];
 	}
 
 	createList(highscore){
@@ -33,16 +12,34 @@ class Highscore{
         `);
       } //for loop 
 	} //createlist
-	savePlayer(rounds, name){
-  		const that = this;
-  		let score = rounds;
-  		this.list.push({name, rounds});
-  		//console.log(rounds, name, this.list.length);
-  		for(let i = 0; i < this.list.length; i++){
-  			console.log(this.list[i]);
-  		}
 
-  	}
+	saveHighscore(rounds, name){
+		this.list.push({name, rounds});
+		this.sortList(this.list);
+		this.list.splice(10, this.list.length - 10);
+		JSON._save('highscore.json', this.list).then(function(){
+		   console.log('saved');
+		});// json save
+	}// savehighscore
+
+	renderHighscore(){
+		let counter = 1;
+		JSON._load('highscore.json').then(function(players){
+		   	for (let player of players){
+			$(".highscore-list").append(`
+          <li class="list-group-item no-border"><span class="trophy px-3"></span>${counter}. ${player.name}<span class="float-right mr-1 mr-md-5 pr-5">${player.rounds}</span></li>
+        `);
+		counter++;
+		}
+		});// json load
+	}
+
+	sortList(array){
+		array.sort(function(a,b){
+			return a.rounds - b.rounds;
+		});
+	}
+	
 }
 		// JSON._classes(Highscore);
 		// JSON._save('highscore.json', list).then(function(){
