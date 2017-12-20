@@ -8,13 +8,14 @@ class Computer extends Player{
   // Randomiserar fram ett nummer mellan 0 och 6
   // Math.floor(Math.random()*7);
   computerDropBrick(){
+    $('.hover-brick-col').children().addClass('transparent');
 		setTimeout(() => {
   		let colNumber;
       do {
         colNumber = Math.floor(Math.random()*7);
     	} while(!this.game.makeMove(colNumber));
     }, 1500);
-    $('.hover-brick-col').children().addClass('transparent');
+    
 	}
 
 }

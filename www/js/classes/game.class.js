@@ -139,14 +139,15 @@ class Game {
  
   hoverBrick(){ 
     const that = this;
-
     if(this.currentPlayer instanceof Computer){
       $('.hover-brick-col').children().removeClass('transparent');
-      
-        }
-
-
-
+      if(this.currentPlayer.color == 'yellow'){
+        $('.hover-brick-col').children().removeClass('yellow');
+      }
+      else if(this.currentPlayer.color == 'red'){
+         $('.hover-brick-col').children().removeClass('red');
+      } 
+    }
 
     $(this.board.boardId).on('mouseover', '.board-col', function(){
       let colNumber = $(this).data('colnr');
