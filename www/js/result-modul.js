@@ -1,5 +1,5 @@
 class Modal{
-  constructor(title, body, key, btn = 'Spela igen'){
+  constructor(title, body, btn = 'Spela igen'){
     this.title = title;
     this.body = '<p>' + body.join('</p><p>') + '</p>';
     this.btn = btn;
