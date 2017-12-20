@@ -9,7 +9,9 @@ class Game {
     }
     this.counter = 0;
     this.roundNumber;
+    this.gameover;
     this.highscore = new Highscore(this);
+    this.isEnd = false;
     JSON._load('highscore')
     .then((data) => {
       // Retrieve the app from JSON
@@ -49,8 +51,8 @@ class Game {
       Om det inte finns en vinnare tittar den om det inte finns några lediga columner kvar & retunerar då 'draw'.
       Annars retuneras false alltså att det inte finns en vinnare och att det finns fortfarande lediga columner man kan lägga brickor i. 
     */
-    let gameover = winner ? winner : (!emptySlots ? 'draw' : false);
-      if (gameover == this.currentPlayer.name){
+    this.gameover = winner ? winner : (!emptySlots ? 'draw' : false);
+      if (this.gameover == this.currentPlayer.name){
         new Modal(
           `Grattis ${this.currentPlayer.name}`,
           [
@@ -59,16 +61,18 @@ class Game {
             `Spela igen? Tryck på knappen.`
           ]
         );
+        this.isEnd = true;
         this.highscore.saveHighscore(this.roundNumber, this.currentPlayer.name);
         return this.currentPlayer;               
       } 
-      else if(gameover == "draw"){
+      else if(this.gameover == "draw"){
         new Modal(
           `Det blev oavgjort.`,
           [
             `Spela igen? Tryck på knappen.`
           ]
         );
+        this.isEnd = true;
         return "draw";
       }
       else{
@@ -132,8 +136,10 @@ class Game {
       $('.player-2').removeClass('active-player');
       $('.player-1').addClass('active-player');
     }
-    if(this.currentPlayer instanceof Computer){
-      this.currentPlayer.computerDropBrick();
+    if (this.gameover != "draw" || this.gameover != this.currentPlayer.name){
+      if(this.currentPlayer instanceof Computer){
+        this.currentPlayer.computerDropBrick();
+      }
     }
   }
  
@@ -195,10 +201,11 @@ class Game {
         this.hoverBrick();
         this.togglePlayer();
         // slut rader för countern
-        if(this.victoryLoop()){return;
-        }
         
-        return true;
+        let winCondition = this.victoryLoop();
+        if(winCondition != "draw" && winCondition != this.currentPlayer.name){        
+           return true;
+          }
       }
       return false;
     }
