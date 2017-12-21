@@ -28,6 +28,6 @@ class Modal{
    $('#main-modal').modal({
        backdrop: 'static',
        keyboard: false
-   })
+   });
   }
 }

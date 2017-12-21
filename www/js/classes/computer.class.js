@@ -4,9 +4,6 @@ class Computer extends Player{
     super(game, name, color);
   }
 
-  // Modifierad variant av dropBrick()-metoden från Player-klassen
-  // Randomiserar fram ett nummer mellan 0 och 6
-  // Math.floor(Math.random()*7);
   computerDropBrick(){
     $('.hover-brick-col').children().addClass('transparent');
 		setTimeout(() => {
@@ -14,8 +11,6 @@ class Computer extends Player{
       do {
         colNumber = Math.floor(Math.random()*7);
     	} while(!this.game.makeMove(colNumber));
-    }, 1500);
-    
+    }, 1500);   
 	}
-
 }

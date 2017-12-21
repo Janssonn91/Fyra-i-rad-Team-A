@@ -5,6 +5,4 @@ class Player {
     this.name = name;
     this.color = color;
   }
-
-
 }

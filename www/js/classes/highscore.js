@@ -15,13 +15,13 @@ class Highscore {
 		JSON._load('highscore.json').then(function(players){
 		   	for (let player of players){
 					$(".highscore-list").append(`
-          			<li class="list-group-item no-border">
-          				<span class="trophy px-3"></span>
-          				${counter}. ${player.name}
-          				<span class="float-right mr-1 mr-md-5 pr-5">
-          				${player.rounds}
-          				</span>
-          			</li>
+        			<li class="list-group-item no-border">
+        				<span class="trophy px-3"></span>
+        				${counter}. ${player.name}
+        				<span class="float-right mr-1 mr-md-5 pr-5">
+        				${player.rounds}
+        				</span>
+        			</li>
         		`);
 				counter++;
 			}

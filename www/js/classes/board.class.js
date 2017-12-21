@@ -9,14 +9,11 @@ class Board{
 						  [0,0,0,0,0,0,0],
 						  [0,0,0,0,0,0,0] ];
 		this.createBoard();
-		$(window).on('resize', () => this.scale()); // kör metod scale när window ändrar storlek
+		$(window).on('resize', () => this.scale());
 		this.scale();
 	}
 
 	scale(){
-		/* tar bort "TypeError: Cannot read property 'top' of undefined" 
-			som kommer på alla sidor förutom spela sidan genom att endast 
-			köra denna metoden om man är på spela.html sidan.*/
 		if(window.location.pathname == '/spela.html'){
 			let boardW;
 			let boardH;
@@ -44,22 +41,19 @@ class Board{
 	}
 
 	createBoard(){
-		//transparent row/col for hover brick
 		let hoverRow = $('<div>').addClass('hover-brick-row');
 		for(let j = 0; j < 7; j++){
-			let hoverCol = $('<div>').addClass('hover-brick-col');
-			hoverCol.attr('data-colNr',j).attr('data-rowNr', 0);
+			let hoverCol = $('<div>').addClass('hover-brick-col').attr('data-colNr',j).attr('data-rowNr', 0);
 			let circles = $('<div>').addClass('circle');
 			hoverCol.append(circles);
 			$(hoverRow).append(hoverCol);
 		}
 		$(this.boardId).append(hoverRow);
-		// visible row/col
+
 		for(let i = 0; i < 6; i++){
 			let row = $('<div>').addClass('board-row');
 			for(let j = 0; j < 7; j++){
-				let col = $('<div>').addClass('board-col noBrick');
-				col.attr('data-colNr',j).attr('data-rowNr', i);
+				let col = $('<div>').addClass('board-col noBrick').attr('data-colNr',j).attr('data-rowNr', i);
 				let circles = $('<div>').addClass('circle');
 				col.append(circles);
 				$(row).append(col);
@@ -67,6 +61,4 @@ class Board{
 			$(this.boardId).append(row);
 		}
 	}
-
-	
 }
