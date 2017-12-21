@@ -4,9 +4,7 @@ class Game {
     localStorage.playerInput ? this.createPlayerStep2() : this.createPlayer();
     this.counter = 0;
     this.roundNumber;
-    this.gameover;
     this.highscore = new Highscore(this);
-    this.isEnd = false;
     JSON._load('highscore')
     .then((data) => {
       for(let players of data){
@@ -29,8 +27,9 @@ class Game {
         radio1: radio1,
         radio3: radio3
       });
+
      if(input1.replace(/^\s+|\s+$/g, "") && input2.replace(/^\s+|\s+$/g, "")){
-      location.href = '/spela.html';
+        location.href = '/spela.html';
       }
       else if(input1.replace(/^\s+|\s+$/g, "")){
         $('#input-1').removeClass('form-error');
@@ -46,18 +45,12 @@ class Game {
   }
 
   createPlayerStep2(){
-   let x = JSON.parse(localStorage.playerInput);
-   delete localStorage.playerInput;
-   if(x.radio1){
-      this.player1 = new Player(this,x.input1,'red');
-    }else{
-      this.player1 = new Computer(this,x.input1,'red');
-    }
-    if(x.radio3){
-      this.player2 = new Player(this,x.input2,'yellow');
-    }else{
-      this.player2 = new Computer(this,x.input2,'yellow');
-    }
+    let x = JSON.parse(localStorage.playerInput);
+    delete localStorage.playerInput;
+    x.radio1 ?  this.player1 = new Player(this,x.input1,'red') : 
+                this.player1 = new Computer(this,x.input1,'red');           
+    x.radio3 ?  this.player2 = new Player(this,x.input2,'yellow') :
+                this.player2 = new Computer(this,x.input2,'yellow');
     $('.player1Name').text(this.player1.name);
     $('.player2Name').text(this.player2.name);
     this.hoverBrick();
@@ -78,10 +71,8 @@ class Game {
       $('.player-2').removeClass('active-player');
       $('.player-1').addClass('active-player');
     }
-    if (this.gameover != "draw" || this.gameover != this.currentPlayer.name){
-      if(this.currentPlayer instanceof Computer){
-        this.currentPlayer.computerDropBrick();
-      }
+    if(this.currentPlayer instanceof Computer){
+      this.currentPlayer.computerDropBrick();
     }
   }
  
@@ -101,6 +92,7 @@ class Game {
       let colNumber = $(this).data('colnr');
       $(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer.color);
     });
+
     $(this.board.boardId).on('mouseleave', '.board-col', function(){
       let colNumber = $(this).data('colnr');
       $(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
@@ -109,7 +101,7 @@ class Game {
 
   dropBrick(){
     const that = this;
-    $(this.board.boardId).on('click', '.board-col', function(){
+    $('.board-col').on('click', function(){
       let colNumber = $(this).data('colnr');
       that.makeMove(colNumber);
     });
@@ -120,7 +112,9 @@ class Game {
     for(let i = emptyCols.length - 1; i>= 0; i--){
       if (emptyCols.hasClass('noBrick')) {
         $(emptyCols[i]).children().addClass(this.currentPlayer.color).addClass('blinking');
-        setTimeout(() => { $(emptyCols[i]).children().removeClass('blinking'); }, 1000);
+        setTimeout(() => { 
+          $(emptyCols[i]).children().removeClass('blinking'); 
+        }, 1000);
         $(emptyCols[i]).removeClass('noBrick');
         let rowNumber = $(emptyCols[i]).data('rownr');
         let colNumber = $(emptyCols[i]).data('colnr');

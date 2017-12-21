@@ -1,13 +1,13 @@
-class Board{
+class Board{	
 	constructor(selector, game){
 		this.boardId = selector;
 		this.game = game;
 		this.arrBoard = [ [0,0,0,0,0,0,0],
-						  [0,0,0,0,0,0,0],
-						  [0,0,0,0,0,0,0],
-						  [0,0,0,0,0,0,0],
-						  [0,0,0,0,0,0,0],
-						  [0,0,0,0,0,0,0] ];
+										  [0,0,0,0,0,0,0],
+										  [0,0,0,0,0,0,0],
+										  [0,0,0,0,0,0,0],
+										  [0,0,0,0,0,0,0],
+										  [0,0,0,0,0,0,0] ];
 		this.createBoard();
 		$(window).on('resize', () => this.scale());
 		this.scale();

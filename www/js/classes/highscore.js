@@ -2,7 +2,7 @@ class Highscore {
 	constructor(){
 		this.list = [];
 	}
-
+	
 	saveHighscore(rounds, name){
 		this.list.push({name, rounds});
 		this.sortList(this.list);
