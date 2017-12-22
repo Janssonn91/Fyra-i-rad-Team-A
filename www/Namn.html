@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Sticky footer -->
     <link rel="stylesheet" href="/css/stickyfooter.css">
+    <!-- Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-
   </head>
   <body>
     <header class="container-fluid mb-5">
@@ -49,60 +49,59 @@
           <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
               <h1 class = "omar mb-5 ml-md-5 mr-sm-5 ml-lg-5"> Ange namn och spelartyp</h1>
-
               <div class="col-12 col-lg-10 ml-md-4 ml-lg-5">
-              <div class="jumbotron2 bg-jumbotron mt-0 py-4 mr-sm-5 ml-xs-5 text-jumbo border-radius">
-              <p class="mb-3 ml-lg-5">Ange spelare 1 <i class="fa fa-circle red-circle" aria-hidden="true"></i></p>
-              <form id="form1">
-                <div class="row">
-                  <div class="col-lg-4 ml-lg-5">
-                    <input type="text" id="input-1" class="form-control mb-3" placeholder="Namn">
+                <div class="jumbotron2 bg-jumbotron mt-0 py-4 mr-sm-5 ml-xs-5 text-jumbo border-radius">
+                <p class="mb-3 ml-lg-5">Ange spelare 1 <i class="fa fa-circle red-circle" aria-hidden="true"></i></p>
+                <form id="form1">
+                  <div class="row">
+                    <div class="col-lg-4 ml-lg-5">
+                      <input type="text" id="input-1" class="form-control mb-3" placeholder="Namn">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label ml-1 mt-3 mt-lg-0"><span class="mr-4">Välj spelartyp:</span>
+                        <input class="form-check-input" type="radio" name="Spelare" id="human-1" value="1" checked>
+                       Människa
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label ml-3 mt-3 mt-lg-0">
+                        <input class="form-check-input" type="radio" name="Spelare" id="cpu-1" value="2">
+                        Dator
+                      </label>
+                    </div>
                   </div>
-                  <div class="form-check">
-                    <label class="form-check-label ml-1 mt-3 mt-lg-0"><span class="mr-4">Välj spelartyp:</span>
-                      <input class="form-check-input" type="radio" name="Spelare" id="human-1" value="1" checked>
-                     Människa
-                    </label>
+                </form>
+                <p class="mt-4 ml-lg-5">Ange spelare 2 <i class="fa fa-circle yellow-circle" aria-hidden="true"></i></p>
+                <form>
+                  <div class="row">
+                    <div class="col-lg-4 ml-lg-5">
+                      <input type="text" id="input-2" class="form-control" placeholder="Namn">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label ml-1 mt-3 mt-lg-0"><span class="mr-4">Välj spelartyp:</span>
+                        <input class="form-check-input" type="radio" name="Spelare" id="human-2" value="1" checked>
+                        Människa
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label ml-3 mt-3 mt-lg-0">
+                        <input class="form-check-input" type="radio" name="Spelare" id="cpu-2" value="2">
+                        Dator
+                      </label>
+                    </div>
                   </div>
-                  <div class="form-check">
-                    <label class="form-check-label ml-3 mt-3 mt-lg-0">
-                      <input class="form-check-input" type="radio" name="Spelare" id="cpu-1" value="2">
-                      Dator
-                    </label>
-                  </div>
-                </div>
-              </form>
-              <p class="mt-4 ml-lg-5">Ange spelare 2 <i class="fa fa-circle yellow-circle" aria-hidden="true"></i></p>
-              <form>
-                <div class="row">
-                  <div class="col-lg-4 ml-lg-5">
-                    <input type="text" id="input-2" class="form-control" placeholder="Namn">
-                  </div>
-                  <div class="form-check">
-                    <label class="form-check-label ml-1 mt-3 mt-lg-0"><span class="mr-4">Välj spelartyp:</span>
-                      <input class="form-check-input" type="radio" name="Spelare" id="human-2" value="1" checked>
-                      Människa
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <label class="form-check-label ml-3 mt-3 mt-lg-0">
-                      <input class="form-check-input" type="radio" name="Spelare" id="cpu-2" value="2">
-                      Dator
-                    </label>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
-          </div>
           </div>
           </div>
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-7 mr-sm-5">
                <button type="button" class="btn btn-success btn-lg button float-right mt-4">Starta</button>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
     </main>
