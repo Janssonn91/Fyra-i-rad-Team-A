@@ -103,7 +103,17 @@ class Game {
     const that = this;
     $('.board-col').on('click', function(){
       let colNumber = $(this).data('colnr');
-      that.makeMove(colNumber);
+       that.makeMove(colNumber);
+      /*if((this.currentPlayer instanceof Computer)){
+          return;
+
+        }
+        else{
+          that.makeMove(colNumber);
+        }*/
+
+
+      
     });
   }
 
@@ -127,9 +137,10 @@ class Game {
         if(!(this.currentPlayer instanceof Computer)){
           hoverCol.addClass(this.currentPlayer.color);
         }
-        if(this.victoryLoop()){return true;}
-        this.hoverBrick();
-        this.togglePlayer();
+        if(!this.victoryLoop()){
+          this.hoverBrick();
+          this.togglePlayer();
+        }
         return true;
       }
       return false;
