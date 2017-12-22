@@ -40,6 +40,7 @@
 .modal-body{
 	line-height: 200%;
 }
+
 /*	Blandat		*/
 .border-radius{
 	border-radius: 15px;
@@ -54,7 +55,6 @@ body {
 nav, .bg-jumbotron {
 	background-color: #2f77ed;
 }
-
 .nav-link{
 	font-size: 1.3rem;
 }
@@ -84,11 +84,9 @@ footer {
 .no-border{
 	border: none;
 }
-
 .jumbotron{
 	padding: 4rem 1rem;
 }
-
 .jumbotron2{
 	padding: 10rem 2rem;
 }
@@ -133,6 +131,7 @@ h2.modal-title{
 .andra-spel{
 	max-height: 180px;
 }
+
 /* Spelregler */
 .youtubes{
 	list-style-type: none;
@@ -142,7 +141,6 @@ h2.modal-title{
 }
 
 /* Highscore */
-
 .highscore-list .list-group-item {
 	background-color: rgba(0, 0, 0, 0.0);
 }
@@ -159,35 +157,28 @@ h2.modal-title{
 	border-radius: 0;
 }
 
-
-/* spela */
+/* Spela */
 .board-holder{
   overflow: hidden;
 	margin: 0 auto;
 }
-
 #board{
 	width: 1148px;
 	height: 798px;
 	transform-origin: 0 0;
   display: none;
 }
-
 .hover-brick-row, .board-row{
   width: 798px;
 }
-
 .board-col , .hover-brick-col{
 	background-color: blue;
 	padding: 7px;
   float: left;
-
 }
-
 .hover-brick-col{
 	background-color: transparent;
 }
-
 .circle{
 	background-color: white;
   height: 100px;
@@ -195,24 +186,19 @@ h2.modal-title{
   border-radius: 50%;
   border: 3px solid #0000aa;
 }
-
 .hover-brick-col > *{
 	background-color: transparent;
 	border:none;
 }
-
 .red{
 	background-color: red;
 }
-
 .yellow{
 	background-color: yellow;
 }
-
 .transparent{
 	background-color: transparent;
 }
-
 .blinking{
 	animation: blink-animation 0.5s  infinite;
   -webkit-animation: blink-animation 0.5s  infinite;
@@ -252,12 +238,10 @@ h2.modal-title{
 		width: 798px;
 	}
 }
-
 .active-player{
 	box-shadow: inset 1px 1px 5px 1px rgba(0,0,0,0.4);
 	background-color: #cdcdcd;
 }
-
 .player-brick{
   height: 25px;
   width: 25px;
@@ -269,11 +253,9 @@ h2.modal-title{
 .red-circle{
 	color: red;
 }
-
 .yellow-circle{
 	color: yellow;
 }
-
 .form-error{
 	border: 1px solid red;
 	color: black;
