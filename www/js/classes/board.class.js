@@ -53,7 +53,7 @@ class Board{
 		for(let i = 0; i < 6; i++){
 			let row = $('<div>').addClass('board-row');
 			for(let j = 0; j < 7; j++){
-				let col = $('<div>').addClass('board-col noBrick').attr('data-colNr',j).attr('data-rowNr', i);
+				let col = $('<div>').addClass('board-col').attr('data-colNr',j).attr('data-rowNr', i);
 				let circles = $('<div>').addClass('circle');
 				col.append(circles);
 				$(row).append(col);

@@ -102,33 +102,23 @@ class Game {
   dropBrick(){
     const that = this;
     $('.board-col').on('click', function(){
+      if(that.currentPlayer instanceof Computer){
+        return;
+      } 
       let colNumber = $(this).data('colnr');
-       that.makeMove(colNumber);
-      /*if((this.currentPlayer instanceof Computer)){
-          return;
-
-        }
-        else{
-          that.makeMove(colNumber);
-        }*/
-
-
-      
+      that.makeMove(colNumber);
     });
   }
 
   makeMove(colNumber){
-    let emptyCols = $(`.noBrick[data-colNr='${colNumber}']`);
-    for(let i = emptyCols.length - 1; i>= 0; i--){
-      if (emptyCols.hasClass('noBrick')) {
-        $(emptyCols[i]).children().addClass(this.currentPlayer.color).addClass('blinking');
-        setTimeout(() => { 
-          $(emptyCols[i]).children().removeClass('blinking'); 
+    for (let row = 5; row >= 0; row--) {
+      if (this.board.arrBoard[row][colNumber] == 0) {
+        this.board.arrBoard[row][colNumber] = this.currentPlayer.color;
+        let emptyCols = $(`.board-col[data-rowNr='${row}'][data-colNr='${colNumber}']`);
+        $(emptyCols).children().addClass(this.currentPlayer.color).addClass('blinking');
+        setTimeout(() => {
+          $(emptyCols).children().removeClass('blinking');
         }, 1000);
-        $(emptyCols[i]).removeClass('noBrick');
-        let rowNumber = $(emptyCols[i]).data('rownr');
-        let colNumber = $(emptyCols[i]).data('colnr');
-        this.board.arrBoard[rowNumber][colNumber] = this.currentPlayer.color;
         this.counter++;
         this.roundNumber = Math.ceil(this.counter/2);
         $('#roundNumber').text(this.roundNumber);
@@ -143,8 +133,8 @@ class Game {
         }
         return true;
       }
-      return false;
     }
+    return false;
   }
 
   victoryLoop(){
