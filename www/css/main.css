@@ -260,3 +260,7 @@ h2.modal-title{
 	border: 1px solid red;
 	color: black;
 }
+
+.button:hover{
+	cursor: pointer;
+}
