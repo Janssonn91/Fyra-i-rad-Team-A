@@ -77,26 +77,28 @@ class Game {
   }
  
   hoverBrick(){ 
-    const that = this;
-    if(this.currentPlayer instanceof Computer){
-      $('.hover-brick-col').children().removeClass('transparent');
-      if(this.currentPlayer.color == 'yellow'){
-        $('.hover-brick-col').children().removeClass('yellow');
+    const that = this; 
+    if(!(/Mobi/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent))){
+      if(this.currentPlayer instanceof Computer){
+        $('.hover-brick-col').children().removeClass('transparent');
+        if(this.currentPlayer.color == 'yellow'){
+          $('.hover-brick-col').children().removeClass('yellow');
+        }
+        else if(this.currentPlayer.color == 'red'){
+          $('.hover-brick-col').children().removeClass('red');
+        } 
       }
-      else if(this.currentPlayer.color == 'red'){
-        $('.hover-brick-col').children().removeClass('red');
-      } 
+
+      $(this.board.boardId).on('mouseover', '.board-col', function(){
+        let colNumber = $(this).data('colnr');
+        $(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer.color);
+      });
+
+      $(this.board.boardId).on('mouseleave', '.board-col', function(){
+        let colNumber = $(this).data('colnr');
+        $(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
+      });
     }
-
-    $(this.board.boardId).on('mouseover', '.board-col', function(){
-      let colNumber = $(this).data('colnr');
-      $(`.hover-brick-col[data-colNr='${colNumber}']`).children().addClass(that.currentPlayer.color);
-    });
-
-    $(this.board.boardId).on('mouseleave', '.board-col', function(){
-      let colNumber = $(this).data('colnr');
-      $(`.hover-brick-col[data-colNr='${colNumber}']`).children().removeClass('red yellow');
-    });
   }
 
   dropBrick(){
@@ -123,9 +125,11 @@ class Game {
         this.roundNumber = Math.ceil(this.counter/2);
         $('#roundNumber').text(this.roundNumber);
         let hoverCol = $(`.hover-brick-col[data-colNr='${colNumber}']`).children();
-        hoverCol.removeClass('red yellow');
-        if(!(this.currentPlayer instanceof Computer)){
-          hoverCol.addClass(this.currentPlayer.color);
+        if(!(/Mobi/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent))){
+          hoverCol.removeClass('red yellow');
+          if(!(this.currentPlayer instanceof Computer)){
+            hoverCol.addClass(this.currentPlayer.color);
+          }
         }
         if(!this.victoryLoop()){
           this.hoverBrick();
