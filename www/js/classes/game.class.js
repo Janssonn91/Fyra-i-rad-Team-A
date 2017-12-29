@@ -4,7 +4,7 @@ class Game {
     localStorage.playerInput ? this.createPlayerStep2() : this.createPlayer();
     this.counter = 0;
     this.roundNumber;
-    this.highscore = new Highscore(this);
+    this.highscore = new Highscore();
     JSON._load('highscore')
     .then((data) => {
       for(let players of data){
