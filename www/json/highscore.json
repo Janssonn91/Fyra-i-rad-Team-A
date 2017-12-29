@@ -12,31 +12,7 @@
     "rounds": 4
   },
   {
-    "name": "d",
-    "rounds": 4
-  },
-  {
-    "name": "ff",
-    "rounds": 4
-  },
-  {
-    "name": "f",
-    "rounds": 5
-  },
-  {
-    "name": "ff",
-    "rounds": 5
-  },
-  {
-    "name": "f",
-    "rounds": 6
-  },
-  {
-    "name": "gg",
-    "rounds": 21
-  },
-  {
     "name": "TEAM A",
-    "rounds": 25
+    "rounds": 14
   }
 ]
