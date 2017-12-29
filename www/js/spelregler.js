@@ -20,7 +20,7 @@ let theRules = $(`
               </ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Stäng</button>
+              <button type="button" class="btn btn-danger btn-modal" data-dismiss="modal">Stäng</button>
             </div>
           </div>
         </div>

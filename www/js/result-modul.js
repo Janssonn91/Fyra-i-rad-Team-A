@@ -19,7 +19,7 @@ class Modal{
                 ${this.body}
               </div>
               <div class="modal-footer">
-                <a href="javascript:history.back(1)"><button type="button" class="btn btn-danger">${this.btn}</button></a>
+                <a href="javascript:history.back(1)"><button type="button" class="btn btn-danger btn-modal">${this.btn}</button></a>
               </div>
             </div>
           </div>
